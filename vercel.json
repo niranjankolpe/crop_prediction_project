@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "crop_prediction_ml/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "crop_prediction_ml/wsgi.py"
+    }
+  ]
+}

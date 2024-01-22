@@ -1,2 +1,1 @@
-# crop_prediction_project
-A Machine Learning Project.
+# crop_prediction_ml

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Predictor{% endblock title %}
+
+{% block style %}{% endblock style %}
+
+{% block script %}{% endblock script %}
+
+{% block body %}
+<h2 style="text-align: center;">Welcome to Crop Prediction!</h2><br><br>
+
+<center><a href="predict_refresh" style="display: inline-block; width: 20%;" class="btn btn-primary">Refresh model</a></center><br>
+
+<h4>Enter the following values to predict which crop shall be the best suitable for farming.</h4><br>
+
+<form action="predict" method="post">
+    {% csrf_token %}
+    <div class="mb-3 row">
+        <div class="mb-3 col-6">
+            <label for="N" class="form-label">Nitrogen (ratio of Nitrogen content in soil)</label>
+            <input type="text" class="form-control" name="N" placeholder="Example: 90" required><br>
+
+            <label for="P" class="form-label">Phosphorous ( ratio of Phosphorous content in soil)</label>
+            <input type="text" class="form-control" name="P" placeholder="Example: 42" required><br>
+
+            <label for="K" class="form-label">Potassium (ratio of Potassium content in soil)</label>
+            <input type="text" class="form-control" name="K" placeholder="Example: 43" required><br>
+
+            <label for="temperature" class="form-label">Temperature (temperature in degree Celsius)</label>
+            <input type="text" class="form-control" name="temperature" placeholder="Example: 20.8797" required><br>
+        </div>
+
+        <div class="mb-3 col-6">
+            <label for="humidity" class="form-label">Humidity (relative humidity in %)</label>
+            <input type="text" class="form-control" name="humidity" placeholder="Example: 82.0027" required><br>
+            
+            <label for="ph" class="form-label">pH (ph value of the soil)</label>
+            <input type="text" class="form-control" name="ph" placeholder="Example: 6.5029" required><br>
+
+            <label for="rainfall" class="form-label">Rainfall (rainfall in mm)</label>
+            <input type="text" class="form-control" name="rainfall" placeholder="Example: 202.9355" required><br>
+        </div>
+
+    </div>
+    <center>
+        <input type="submit" class="form-control" style="background-color: blueviolet; color: white; width: 30%;" value="Predict">
+    </center>
+</form>
+{% endblock body %}
