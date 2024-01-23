@@ -34,18 +34,18 @@ def predict(request):
     if request.method == 'POST':
         predict_value = ""
 
-        # N = int(request.POST['N'])
-        # P = int(request.POST['P'])
-        # K = int(request.POST['K'])
-        # temperature = float(request.POST['temperature'])
-        # humidity = float(request.POST['humidity'])
-        # ph = float(request.POST['ph'])
-        # rainfall = float(request.POST['rainfall'])
+        N = int(request.POST['N'])
+        P = int(request.POST['P'])
+        K = int(request.POST['K'])
+        temperature = float(request.POST['temperature'])
+        humidity = float(request.POST['humidity'])
+        ph = float(request.POST['ph'])
+        rainfall = float(request.POST['rainfall'])
         
-        # model = joblib.load("media_files/crop_prediction_model")
+        model = joblib.load("media_files/crop_prediction_model")
 
-        # predict_value = model.predict([[N, P, K, temperature, humidity, ph, rainfall]])
-        # predict_value = str(predict_value[0])
+        predict_value = model.predict([[N, P, K, temperature, humidity, ph, rainfall]])
+        predict_value = str(predict_value[0])
 
 
         data = {'prediction':predict_value, 'media_url': settings.MEDIA_URL}
