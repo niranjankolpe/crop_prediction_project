@@ -4,14 +4,40 @@
 
 {% block style %}{% endblock style %}
 
-{% block script %}{% endblock script %}
+{% block script %}
+function refresh_ml_model() {
+    fetch('predict_refresh', { method: 'GET' })
+        .then(response => response.json())
+        .then(data => alert(data.message))
+        .catch(error => console.error('Error:', error));
+}
+{% comment %} 
+function download_cropData_csv() {
+    fetch('export_cropdetails_csv')
+    .then(response => response.blob())
+    .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'cropdetails.csv';
+        a.click();
+    });
+} {% endcomment %}
+
+{% endblock script %}
 
 {% block body %}
+<h1 style="text-align: center;">Crop Prediction</h1><br><br>
+
 <h2 style="text-align: center;">Welcome to Crop Prediction!</h2><br><br>
 
-<h4>Enter the following values to predict which crop shall be the best suitable for farming.</h4><br>
+<h4>Enter the following values to predict which crop shall be the best suitable for farming.</h4><br><br>
 
-<form action="predict" method="post">
+<button class="btn btn-primary" onclick="refresh_ml_model()">Retrain Model</button>
+<a class="btn btn-primary" href="export_cropdetails_csv">Download Prediction Data (.csv)</a>
+<br><br>
+
+<form action="predict" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="mb-3 row">
         <div class="mb-3 col-6">
@@ -37,6 +63,9 @@
 
             <label for="rainfall" class="form-label">Rainfall (rainfall in mm)</label>
             <input type="text" class="form-control" name="rainfall" placeholder="Example: 202.9355" required><br>
+
+            <label for="photo" class="form-label">Photo of the environment (optional)</label>
+            <input type="file" class="form-control" name="photo" placeholder="Choose an Image file" accept="image/*"><br>
         </div>
 
     </div>
