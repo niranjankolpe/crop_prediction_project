@@ -4,27 +4,7 @@
 
 {% block style %}{% endblock style %}
 
-{% block script %}
-function refresh_ml_model() {
-    fetch('predict_refresh', { method: 'GET' })
-        .then(response => response.json())
-        .then(data => alert(data.message))
-        .catch(error => console.error('Error:', error));
-}
-{% comment %} 
-function download_cropData_csv() {
-    fetch('export_cropdetails_csv')
-    .then(response => response.blob())
-    .then(blob => {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'cropdetails.csv';
-        a.click();
-    });
-} {% endcomment %}
-
-{% endblock script %}
+{% block script %}{% endblock script %}
 
 {% block body %}
 <h1 style="text-align: center;">Crop Prediction</h1><br><br>
@@ -32,10 +12,6 @@ function download_cropData_csv() {
 <h2 style="text-align: center;">Welcome to Crop Prediction!</h2><br><br>
 
 <h4>Enter the following values to predict which crop shall be the best suitable for farming.</h4><br><br>
-
-<button class="btn btn-primary" onclick="refresh_ml_model()">Retrain Model</button>
-<a class="btn btn-primary" href="export_cropdetails_csv">Download Prediction Data (.csv)</a>
-<br><br>
 
 <form action="predict" method="post" enctype="multipart/form-data">
     {% csrf_token %}

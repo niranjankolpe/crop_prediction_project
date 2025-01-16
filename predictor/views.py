@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 from .models import *
 from datetime import datetime
@@ -6,10 +7,13 @@ from crop_prediction_ml.settings import *
 
 from django.conf import settings
 import pandas as pd
+
 from sklearn.linear_model import LogisticRegression
 from  sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import joblib
+
+from sklearn.metrics import confusion_matrix, classification_report
 
 import csv
 from django.http import HttpResponse, JsonResponse
@@ -32,14 +36,42 @@ def predict_refresh(request):
     df = pd.read_csv(f"{STATIC_ROOT}/cp.csv")
     x = df.drop(columns=['label'], axis=1)
     y = df['label']
+
     sclr = StandardScaler()
+    columns = list(df.columns)
+    columns.remove('label')
     x_scaled = sclr.fit_transform(x)
+    x_scaled = pd.DataFrame(x_scaled, columns=columns)
+
     x_train, x_test, y_train, y_test = train_test_split(x_scaled, y, test_size = 0.2, random_state = 42)
     log_reg = LogisticRegression()
     log_reg.fit(x_train, y_train)
     with open(f'{STATIC_ROOT}/crop_prediction_model', 'wb') as f:
         joblib.dump(log_reg, f)
-    return JsonResponse({"message": "ML Model Retrained Successfully!"})
+    
+    df.to_html(f"predictor/static/training_dataset.html")
+
+    df.describe().to_html("predictor/static/dataset_description.html")
+
+    x.to_html(f"predictor/static/x.html")
+    x_scaled.to_html(f"predictor/static/x_scaled.html")
+
+    x_train.to_html(f"predictor/static/x_train.html")
+    x_test.to_html(f"predictor/static/x_test.html")
+
+    y_train = pd.DataFrame(y_train)
+    y_train.to_html(f"predictor/static/y_train.html")
+    y_test = pd.DataFrame(y_test)
+    y_test.to_html(f"predictor/static/y_test.html")
+
+    y_pred = log_reg.predict(x_test)
+
+    class_report = classification_report(y_test, y_pred, output_dict=True)
+    class_report_df = pd.DataFrame(class_report).transpose()
+    class_report_df.to_html(f"predictor/static/classification_report.html")
+
+    messages.success(request, "ML model retrained successfully!")
+    return redirect("analytics")
     
 def predict(request):
     if request.method != 'POST':
@@ -138,3 +170,7 @@ def logoutUser(request):
     logout(request)
     messages.success(request, "Logged out successfully!")
     return redirect("predictor")
+
+def analytics(request):
+
+    return render(request, "predictor/analytics.html")

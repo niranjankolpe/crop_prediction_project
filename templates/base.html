@@ -12,15 +12,7 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'style.css' %}">
 
-  <style>
-    {
-      % block style %
-    }
-
-      {
-      % endblock style %
-    }
-  </style>
+  <style>{% block style %}{% endblock style %}</style>
 
   <script>{% block script %} {% endblock script %}</script>
 </head>
@@ -35,6 +27,7 @@
           <li class="nav-item"><a class="nav-link" href="admin">Admin</a></li>
           <li class="nav-item"><a class="nav-link" href="api">API</a></li>
           <li class="nav-item"><a class="nav-link" href="donate">Donation</a></li>
+          <li class="nav-item"><a class="nav-link" href="analytics">Analytics</a></li>
         </ul>
         <ul class="navbar-nav ms-auto">
           {% if user.is_authenticated %}
