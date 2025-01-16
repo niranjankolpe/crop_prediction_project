@@ -2,7 +2,11 @@
 
 {% block title %}Donate{% endblock title %}
 
-{% block style %}{% endblock style %}
+{% block style %}
+form > div{
+    text-align: left;
+}
+{% endblock style %}
 
 {% block body %}
 <h1 style="text-align: center;">Donate for this Project</h1><br>
@@ -10,13 +14,11 @@
     {% csrf_token %}
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp"
-            placeholder="Enter name" required>
+        <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Enter name" required>
     </div><br>
     <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" class="form-control" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" aria-describedby="emailHelp"
-            placeholder="Enter email" required>
+        <input type="email" class="form-control" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" aria-describedby="emailHelp" placeholder="Enter email" required>
     </div><br>
     <div class="form-group">
         <label for="phoneNumber">Phone Number</label>

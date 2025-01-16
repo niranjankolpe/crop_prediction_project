@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block style %}
+form > div{
+    text-align: left;
+}
+{% endblock style %}
+
+{% block script %}{% endblock script %}
+
+{% block body %}
+<h1 style="text-align: center;">Login</h1><br>
+<form action="loginSubmit" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" id="username" aria-describedby="emailHelp"
+            placeholder="Enter username" required>
+    </div><br>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" required>
+    </div><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock body %}

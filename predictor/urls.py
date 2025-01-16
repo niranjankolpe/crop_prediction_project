@@ -9,5 +9,10 @@ urlpatterns = [
     path('predict', views.predict, name="predict"),
     path('export_cropdetails_csv', views.export_cropdetails_csv, name="export_cropdetails_csv"),
     path('donate', views.donate, name="donate"),
-    path('donateSubmit', views.donateSubmit, name="donateSubmit")
+    path('donateSubmit', views.donateSubmit, name="donateSubmit"),
+    path('signup', views.signup, name="signup"),
+    path('signupSubmit', views.signupSubmit, name="signupSubmit"),
+    path('loginUser', views.loginUser, name="loginUser"),
+    path('loginSubmit', views.loginSubmit, name="loginSubmit"),
+    path('logoutUser', views.logoutUser, name="logoutUser"),
 ]

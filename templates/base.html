@@ -1,43 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock title %} | Crop Prediction</title>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock title %} | Crop Prediction</title>
 
-    <link rel="shortcut icon" href="{{static_url}}favicon.ico" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{static_url}}style.css">
+  <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
 
-    <style>{% block style %}{% endblock style %}</style>
+  <style>
+    {
+      % block style %
+    }
 
-    <script>{% block script %}{% endblock script %}</script>
+      {
+      % endblock style %
+    }
+  </style>
+
+  <script>{% block script %} {% endblock script %}</script>
 </head>
-<body style="background: url({% static 'crop.png' %}); background-size: cover; background-position: center;">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="predictor" style="padding-left: 10px;">Crop Prediction</a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="predictor">Predictor</a></li>
-                <li class="nav-item"><a class="nav-link" href="admin">Admin</a></li>
-                <li class="nav-item"><a class="nav-link" href="api">API</a></li>
-                <li class="nav-item"><a class="nav-link" href="donate">Donation</a></li>
-              </ul>
-            </div>
-        </nav><br>
-        
-        {% for message in messages %}
-        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
-          <strong>{{message}}</strong>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        {% endfor %}
 
-        <!--
+<body style="background: url({% static 'crop.png' %}); background-size: cover; background-position: center;">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="predictor" style="padding-left: 10px;">Crop Prediction</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="predictor">Predictor</a></li>
+          <li class="nav-item"><a class="nav-link" href="admin">Admin</a></li>
+          <li class="nav-item"><a class="nav-link" href="api">API</a></li>
+          <li class="nav-item"><a class="nav-link" href="donate">Donation</a></li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          {% if user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">{{request.user}}</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="logoutUser">Logout</a>
+              <!-- <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a> -->
+            </div>
+          </li>
+          {% else %}
+          <li class="nav-item"><a class="nav-link" href="signup">Signup</a></li>
+          <li class="nav-item"><a class="nav-link" href="loginUser">Login</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav><br>
+
+    <div id="clock" style="text-align: right;"></div><br>
+
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+      <strong>{{message}}</strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
+
+    <!--
         Works!
         <img src="{% static 'crop.png' %}" alt="Got no image">
         <img src="{{static_url}}small_plant.png" alt="Nope. Got no image"><br><br>
@@ -47,25 +77,60 @@
         <img src="C:\\Users\\user\\Desktop\\My Files\\Crop Prediction\\static_root\\crop.png" alt="Nope. Got no image">
         -->
 
-        {% block body %}{% endblock body %}
-        <br>
-        <big>This project is only for sample display and does not gurantee accuracy of any input values or predictions. So use it only for fun :)</big>
-        <br><br><br><br>
-    </div>
+    {% block body %}{% endblock body %}
+    <br>
+    <big>This project is only for sample display and does not gurantee accuracy of any input values or predictions. So
+      use it only for fun :)</big>
+    <br><br><br><br>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script>
+    function updateClock() {
+      const clockElement = document.getElementById("clock");
+      const now = new Date();
 
-    <!-- Include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      // Get the date components
+      const day = now.getDate();
+      const month = now.toLocaleString('default', { month: 'long' }); // Full month name
+      const year = now.getFullYear();
 
-    <!-- Include Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+      // Get the time components
+      let hours = now.getHours();
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
 
-    <!-- Include Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      // Convert to 12-hour format and determine AM/PM
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12; // Convert 0 to 12 for midnight
+
+      // Update the clock display
+      clockElement.textContent = `${day} ${month} ${year}, ${hours}:${minutes}:${seconds} ${ampm}`;
+    }
+
+    // Update the clock every second
+    setInterval(updateClock, 1000);
+
+    // Initialize the clock immediately
+    updateClock();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+  <!-- Include Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

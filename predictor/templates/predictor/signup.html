@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Signup{% endblock title %}
+
+{% block style %}
+form > div{
+    text-align: left;
+}
+{% endblock style %}
+
+{% block script %}
+function validatePasswords() {
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+        alert("Passwords don't match!")
+        return false; // Prevent form submission
+    } else {
+        return true; // Allow form submission
+    }
+}
+
+{% endblock script %}
+
+{% block body %}
+<h1 style="text-align: center;">Signup</h1><br>
+<form action="signupSubmit" onsubmit="return validatePasswords()" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" name="firstName" id="firstName" aria-describedby="emailHelp"
+            placeholder="Enter your first name" required>
+    </div><br>
+    <div class="form-group">
+        <label for="lastName">Full Name</label>
+        <input type="text" class="form-control" name="lastName" id="lastName" aria-describedby="emailHelp"
+            placeholder="Enter your last name" required>
+    </div><br>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" id="username" aria-describedby="emailHelp"
+            placeholder="Enter username" required>
+    </div><br>
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" aria-describedby="emailHelp"
+            placeholder="Enter email" required>
+    </div><br>
+    <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="number" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Enter Phone Number" required>
+    </div><br>
+    <div class="form-group">
+        <label for="password">Create Password</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" required>
+    </div><br>
+    <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm password" required>
+    </div><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock body %}

@@ -14,6 +14,8 @@ import joblib
 import csv
 from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
 
 # from django.contrib.auth.models import User
 # user = User.objects.get(username='admin')
@@ -24,8 +26,7 @@ def index(request):
     return redirect("predictor")
 
 def predictor(request):
-    context = {'static_url': settings.STATIC_URL}
-    return render(request, "predictor/predictor.html", context)
+    return render(request, "predictor/predictor.html")
 
 def predict_refresh(request):
     df = pd.read_csv(f"{STATIC_ROOT}/cp.csv")
@@ -59,9 +60,7 @@ def predict(request):
 
         predict_value = model.predict([[N, P, K, temperature, humidity, ph, rainfall]])
         predict_value = str(predict_value[0])
-
         
-
         timestamp = datetime.now()
 
         if request.FILES.get("photo"):
@@ -97,3 +96,45 @@ def donate(request):
 def donateSubmit(request):
     messages.success(request, "Your payment was successful!")
     return render(request, "predictor/donateSubmit.html")
+
+def signup(request):
+    return render(request, "predictor/signup.html")
+
+def signupSubmit(request):
+    if request.method == "POST":
+        firstName = request.POST["firstName"]
+        lastName = request.POST["lastName"]
+        username = request.POST["username"]
+        email = request.POST["email"]
+        password = request.POST["password"]
+        newUser = User.objects.create_user(username=username, email=email, password=password)
+        newUser.first_name = firstName
+        newUser.last_name = lastName
+        newUser.save()
+        messages.success(request, "Account created successfully!")
+    else:
+        messages.error(request, "Access to this URL allowed from Signup form submission only!")
+    return redirect("predictor")
+
+def loginUser(request):
+    return render(request, "predictor/login.html")
+
+def loginSubmit(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        currentUser = authenticate(username=username, password=password)
+
+        if currentUser is not None:
+            login(request, currentUser)
+            messages.success(request, "Logged in successfully!")
+            return redirect("predictor")
+        else:
+            messages.error(request, "Invalid Credentials!")
+            return redirect("login")
+    return redirect("predictor")
+
+def logoutUser(request):
+    logout(request)
+    messages.success(request, "Logged out successfully!")
+    return redirect("predictor")
