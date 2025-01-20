@@ -1,9 +1,9 @@
+import random
 from django.shortcuts import render, redirect
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 from .models import *
 from datetime import datetime
-from crop_prediction_ml.settings import *
 
 from django.conf import settings
 import pandas as pd
@@ -20,6 +20,8 @@ from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+
+from predictor import emailService
 
 # from django.contrib.auth.models import User
 # user = User.objects.get(username='admin')
@@ -132,13 +134,39 @@ def donateSubmit(request):
 def signup(request):
     return render(request, "predictor/signup.html")
 
-def signupSubmit(request):
+def otpValidation(request):
     if request.method == "POST":
         firstName = request.POST["firstName"]
         lastName = request.POST["lastName"]
         username = request.POST["username"]
         email = request.POST["email"]
         password = request.POST["password"]
+
+        currentOTP = random.randint(100000, 999999)
+        request.session['currentOTP'] = currentOTP
+        emailService.sendOTPForValidation(email, currentOTP)
+        
+        userData = {'firstName':firstName, 'lastName':lastName, 'username':username, 'email':email, 'password':password}
+        return render(request, "predictor/otpValidation.html", userData)
+    else:
+        messages.error(request, "Access to this URL allowed from Signup form submission only!")
+        return redirect("signup")
+
+def signupSubmit(request):
+    currentOTP = str(request.session.get('currentOTP'))
+    if request.method == "POST":
+        firstName = request.POST["firstName"]
+        lastName = request.POST["lastName"]
+        username = request.POST["username"]
+        email = request.POST["email"]
+        password = request.POST["password"]
+        otp = request.POST["otp"]
+        userData = {'firstName':firstName, 'lastName':lastName, 'username':username, 'email':email, 'password':password}
+        if (otp == currentOTP):
+            pass
+        else:
+            messages.error(request, f"Invalid OTP! Please reenter correct OTP.")
+            return render(request, "predictor/otpValidation.html", userData)
         newUser = User.objects.create_user(username=username, email=email, password=password)
         newUser.first_name = firstName
         newUser.last_name = lastName

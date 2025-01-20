@@ -15,5 +15,6 @@ urlpatterns = [
     path('loginUser', views.loginUser, name="loginUser"),
     path('loginSubmit', views.loginSubmit, name="loginSubmit"),
     path('logoutUser', views.logoutUser, name="logoutUser"),
-    path('analytics', views.analytics, name="analytics")
+    path('analytics', views.analytics, name="analytics"),
+    path('otpValidation', views.otpValidation, name="otpValidation")
 ]

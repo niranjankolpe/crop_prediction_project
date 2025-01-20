@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}OTP Validation{% endblock title %}
+
+{% block style %}
+form > div{
+    text-align: left;
+}
+{% endblock style %}
+
+{% block script %}{% endblock script %}
+
+{% block body %}
+<h1 style="text-align: center;">OTP Validation</h1><br>
+<form action="signupSubmit" method="post">
+    {% csrf_token %}
+    <input type="text"     value="{{firstName}}" name="firstName" id="firstName" hidden required>
+    <input type="text"     value="{{lastName}}" name="lastName" id="lastName" hidden required>
+    <input type="text"     value="{{username}}" name="username" id="username" hidden required>
+    <input type="email"    value="{{email}}" name="email" id="email" hidden required>
+    <input type="password" value="{{password}}" name="password" id="password" hidden required>
+    <div class="form-group">
+        <label for="otp">OTP</label>
+        <input type="text" class="form-control" name="otp" id="otp" placeholder="Enter otp" required>
+    </div><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock body %}

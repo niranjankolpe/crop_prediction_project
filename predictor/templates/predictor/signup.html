@@ -25,7 +25,7 @@ function validatePasswords() {
 
 {% block body %}
 <h1 style="text-align: center;">Signup</h1><br>
-<form action="signupSubmit" onsubmit="return validatePasswords()" method="post">
+<form action="otpValidation" onsubmit="return validatePasswords()" method="post">
     {% csrf_token %}
     <div class="form-group">
         <label for="firstName">First Name</label>
@@ -46,10 +46,6 @@ function validatePasswords() {
         <label for="email">Email address</label>
         <input type="email" class="form-control" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" aria-describedby="emailHelp"
             placeholder="Enter email" required>
-    </div><br>
-    <div class="form-group">
-        <label for="phoneNumber">Phone Number</label>
-        <input type="number" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Enter Phone Number" required>
     </div><br>
     <div class="form-group">
         <label for="password">Create Password</label>
