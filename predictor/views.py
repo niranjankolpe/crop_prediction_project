@@ -22,7 +22,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 
 from predictor import emailService
-
+from .forms import *
 # from django.contrib.auth.models import User
 # user = User.objects.get(username='admin')
 # user.set_password("admin")
@@ -50,27 +50,60 @@ def predict_refresh(request):
     log_reg.fit(x_train, y_train)
     with open(f'{STATIC_ROOT}/crop_prediction_model', 'wb') as f:
         joblib.dump(log_reg, f)
+
+    css = """<style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }</style>
+        """
     
-    df.to_html(f"predictor/static/training_dataset.html")
+    with open(f"predictor/static/training_dataset.html", "w") as file:
+        file.write(css + df.to_html(index=False))
 
-    df.describe().to_html("predictor/static/dataset_description.html")
+    with open(f"predictor/static/dataset_description.html", "w") as file:
+        file.write(css + df.describe().to_html(index=False))
 
-    x.to_html(f"predictor/static/x.html")
-    x_scaled.to_html(f"predictor/static/x_scaled.html")
+    with open(f"predictor/static/x.html", "w") as file:
+        file.write(css + x.to_html(index=False))
 
-    x_train.to_html(f"predictor/static/x_train.html")
-    x_test.to_html(f"predictor/static/x_test.html")
+    with open(f"predictor/static/x_scaled.html", "w") as file:
+        file.write(css + x_scaled.to_html(index=False))
+
+    with open(f"predictor/static/x_train.html", "w") as file:
+        file.write(css + x_train.to_html(index=False))
+
+    with open(f"predictor/static/x_test.html", "w") as file:
+        file.write(css + x_test.to_html(index=False))
 
     y_train = pd.DataFrame(y_train)
-    y_train.to_html(f"predictor/static/y_train.html")
+    with open(f"predictor/static/y_train.html", "w") as file:
+        file.write(css + y_train.to_html(index=False))
+
     y_test = pd.DataFrame(y_test)
-    y_test.to_html(f"predictor/static/y_test.html")
+    with open(f"predictor/static/y_test.html", "w") as file:
+        file.write(css + y_test.to_html(index=False))
 
     y_pred = log_reg.predict(x_test)
+    y_pred = pd.DataFrame(y_pred, columns=["label"])
+    with open(f"predictor/static/y_pred.html", "w") as file:
+        file.write(css + y_pred.to_html(index=False))
 
     class_report = classification_report(y_test, y_pred, output_dict=True)
     class_report_df = pd.DataFrame(class_report).transpose()
-    class_report_df.to_html(f"predictor/static/classification_report.html")
+
+    with open(f"predictor/static/classification_report.html", "w") as file:
+        file.write(css + class_report_df.to_html(index=False))
 
     messages.success(request, "ML model retrained successfully!")
     return redirect("analytics")
@@ -200,5 +233,24 @@ def logoutUser(request):
     return redirect("predictor")
 
 def analytics(request):
-
+    if (not request.user.is_authenticated):
+        messages.info(request, "Login to access the Analytics page!")
+        return redirect("loginUser")
     return render(request, "predictor/analytics.html")
+
+# def contactUs(request):
+#     return render(request, "predictor/contactUs.html")
+
+def aboutUs(request):
+    return render(request, "predictor/aboutUs.html")
+
+def contactUs(request):
+    if request.method == 'POST':
+        form = ContactUsTicketForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Ticket submitted successfully!")
+            return redirect('predictor')
+    else:
+        form = ContactUsTicketForm()
+    return render(request, 'predictor/contactUs.html', {'form': form})

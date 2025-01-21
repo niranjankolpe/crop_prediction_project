@@ -3,6 +3,9 @@
 {% block title %}Signup{% endblock title %}
 
 {% block style %}
+div{
+    text-align: left;
+}
 form > div{
     text-align: left;
 }
@@ -24,8 +27,8 @@ function validatePasswords() {
 {% endblock script %}
 
 {% block body %}
-<h1 style="text-align: center;">Signup</h1><br>
-<form action="otpValidation" onsubmit="return validatePasswords()" method="post">
+<h1 style="text-align: center;">Signup</h1>
+<form action="otpValidation" onsubmit="return validatePasswords()" method="post" class="custom_form_css">
     {% csrf_token %}
     <div class="form-group">
         <label for="firstName">First Name</label>
@@ -33,7 +36,7 @@ function validatePasswords() {
             placeholder="Enter your first name" required>
     </div><br>
     <div class="form-group">
-        <label for="lastName">Full Name</label>
+        <label for="lastName">Last Name</label>
         <input type="text" class="form-control" name="lastName" id="lastName" aria-describedby="emailHelp"
             placeholder="Enter your last name" required>
     </div><br>
@@ -55,6 +58,9 @@ function validatePasswords() {
         <label for="confirmPassword">Confirm Password</label>
         <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Confirm password" required>
     </div><br>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button><br><br>
+    <div style="text-align: center;">
+        <p>Already a User? <a href="loginUser" style="text-decoration: none;">Login</a></p>
+    </div>
 </form>
 {% endblock body %}

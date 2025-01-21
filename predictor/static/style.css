@@ -1,26 +1,68 @@
-h1, h2, h3, h4{
-    text-align: center;
+/* Apply styles only to forms with class "custom_form_css" */
+.custom_form_css {
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+    font-family: 'Arial', sans-serif;
+    color: #3e4c44; /* A neutral dark color for text */
 }
 
-h2{
-    color: red;
-    text-align: center;
+/* Form labels within custom_form_css */
+.custom_form_css label {
+    font-size: 16px;
+    color: #2e8b57; /* Rich green for labels */
+    margin-bottom: 6px;
+    display: block;
 }
 
-div{
-    text-align: center;
+/* Input and select styling within custom_form_css */
+.custom_form_css input[type="text"],
+.custom_form_css textarea,
+.custom_form_css select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #8b8b8b; /* Light grey border */
+    border-radius: 6px;
+    background-color: #f1f1f1;
+    font-size: 14px;
+    color: #333;
 }
 
-.sample_image_1{
-    height: 25%;
-    width: 25%;
-    display: inline-block;
-    border: 5px solid red;
+/* Focus styles for inputs, select, and textarea within custom_form_css */
+.custom_form_css input:focus,
+.custom_form_css select:focus,
+.custom_form_css textarea:focus {
+    outline: none;
+    border-color: #2e8b57; /* Green focus */
+    background-color: #e9f5e9; /* Light green on focus */
 }
 
-.sample_image_2{
-    height: 25%;
-    width: 25%;
-    display: inline-block;
-    border: 5px solid orange;
+/* Button styling within custom_form_css */
+.custom_form_css button {
+    width: 100%;
+    padding: 14px;
+    background-color: #2e8b57; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect within custom_form_css */
+.custom_form_css button:hover {
+    background-color: #246f45; /* Slightly darker green */
+}
+
+/* Responsive design for custom_form_css */
+@media (max-width: 600px) {
+    .custom_form_css {
+        padding: 15px;
+    }
 }

@@ -12,7 +12,7 @@ form > div{
 
 {% block body %}
 <h1 style="text-align: center;">OTP Validation</h1><br>
-<form action="signupSubmit" method="post">
+<form action="signupSubmit" method="post" class="custom_form_css">
     {% csrf_token %}
     <input type="text"     value="{{firstName}}" name="firstName" id="firstName" hidden required>
     <input type="text"     value="{{lastName}}" name="lastName" id="lastName" hidden required>

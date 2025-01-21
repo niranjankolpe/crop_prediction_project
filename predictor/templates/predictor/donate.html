@@ -2,15 +2,11 @@
 
 {% block title %}Donate{% endblock title %}
 
-{% block style %}
-form > div{
-    text-align: left;
-}
-{% endblock style %}
+{% block style %}{% endblock style %}
 
 {% block body %}
 <h1 style="text-align: center;">Donate for this Project</h1><br>
-<form action="donateSubmit" method="post">
+<form action="donateSubmit" method="post" class="custom_form_css">
     {% csrf_token %}
     <div class="form-group">
         <label for="name">Name</label>

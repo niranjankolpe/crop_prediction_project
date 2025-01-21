@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us{% endblock title %}
+
+{% block style %}{% endblock style %}
+
+{% block script %}{% endblock script %}
+
+{% block body %}
+<h1 style="text-align: center;">Contact Us cum Complaint cum Feedback Form</h1>
+<form action="contactUs" method="post" class="custom_form_css">
+    {% csrf_token %}
+    {% comment %} <label for="emailAddress">Enter your Email:</label>
+    <input type="text" name="emailAddress"><br>
+
+    <label for="queryType">Select query type:</label>
+    <select name="queryType">
+        <option value="0">Complaint</option>
+        <option value="1">Feeback</option>
+        <option value="2">Suggestion</option>
+    </select><br>
+
+    <label for="queryDescription">Enter your thougths:</label>
+    <textarea name="queryDescription"></textarea><br><br> {% endcomment %}
+    {{ form.as_p }}
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form><br><br>
+<p>Contact us at:<br>Email: nonexistentemailaddress&#64;samplemail.com<br>Phone: +91 9999999999 (fake demo phone number)</p>
+{% endblock body %}

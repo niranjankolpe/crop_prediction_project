@@ -7,11 +7,11 @@
 {% block script %}{% endblock script %}
 
 {% block body %}
-<h1 style="text-align: center;">Crop Prediction</h1><br><br>
+<h1 style="text-align: center; color: red;">Crop Prediction</h1><br><br>
 
 <h2 style="text-align: center;">Welcome to Crop Prediction!</h2><br><br>
 
-<h4>Enter the following values to predict which crop shall be the best suitable for farming.</h4><br><br>
+<h4 style="text-align: center;">Enter the following values to predict which crop shall be the best suitable for farming.</h4><br><br>
 
 <form action="predict" method="post" enctype="multipart/form-data">
     {% csrf_token %}

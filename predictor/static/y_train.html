@@ -1,7049 +1,5303 @@
-<table border="1" class="dataframe">
+<style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }</style>
+        <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th></th>
       <th>label</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>1656</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>752</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>892</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1041</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1179</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>162</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1523</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>973</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1104</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1900</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>650</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>494</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>256</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1503</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>2162</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>440</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>2010</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>2076</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>2003</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1744</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>859</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1272</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>20</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1647</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>649</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1161</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>381</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1278</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>605</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1665</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>495</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1010</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>83</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>461</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>994</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>2195</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1437</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>715</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1724</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1738</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>931</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>374</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>270</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>678</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>694</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1121</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>464</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1446</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1157</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>596</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>429</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1473</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>25</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>907</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1491</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>458</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1530</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>680</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>78</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>366</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1577</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>32</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1112</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1770</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>561</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1911</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>921</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>435</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1717</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>891</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>163</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>203</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1475</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1957</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>305</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>209</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>613</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>2170</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>2180</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1604</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1336</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1623</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1229</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>2163</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>483</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1113</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1526</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1116</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>988</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>2129</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>411</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>2101</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1211</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1988</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>963</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1747</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1547</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>785</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>447</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1383</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1776</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>756</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1237</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>809</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>45</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>2119</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1756</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>294</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>2183</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>2093</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>564</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>916</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1700</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>436</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1555</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>393</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1668</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>534</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>30</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>610</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1332</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>929</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1857</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1856</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>2049</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>949</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>344</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>556</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>2045</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>352</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>91</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>838</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1720</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>923</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1640</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>261</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>2086</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>952</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1949</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>567</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>679</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1259</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>695</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>810</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1918</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>300</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1146</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1419</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>315</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1614</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>453</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>175</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>2064</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>2177</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1903</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>123</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>888</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>394</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>903</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1750</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>39</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>462</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1423</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>686</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>331</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>194</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>2092</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>322</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>266</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1952</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>579</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1574</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1725</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>941</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1968</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1134</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1255</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1133</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>2166</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>2122</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1935</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>572</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1813</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1869</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1890</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1561</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1669</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1111</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1176</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1676</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1084</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1510</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1281</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>755</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>365</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1225</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1931</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>861</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1068</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>583</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1584</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>2056</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>849</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>2123</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1606</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>812</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>736</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1087</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>318</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>926</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>2073</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1772</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>808</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1885</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>343</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>398</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>584</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1702</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>292</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1344</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1102</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1159</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>141</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1004</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>2</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>576</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1533</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>339</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>874</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>265</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>376</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1928</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>439</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>271</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>244</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1436</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1273</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>816</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1564</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>607</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>415</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>273</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1975</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>250</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>413</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1292</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1546</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>310</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>781</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>765</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>425</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>2134</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>839</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1925</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1602</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>965</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1639</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1512</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>526</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>2186</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>893</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>182</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>170</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>997</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1433</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>187</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>619</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>2006</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>158</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>879</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>272</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>614</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1833</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1889</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1953</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>371</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>222</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>593</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>2130</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>767</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1912</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>136</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>518</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>845</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>334</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1029</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1374</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1245</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>831</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>710</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>15</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>942</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1103</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1822</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1996</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>570</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>654</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>836</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1286</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>465</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1050</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>199</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1037</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1418</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1249</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>862</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1333</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1058</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1536</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1106</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>591</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1009</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1657</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1677</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1573</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>2037</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1165</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>43</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1226</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>274</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1730</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>101</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1404</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1712</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>2000</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>107</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1554</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>497</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>2188</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1517</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1846</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>855</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1190</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1411</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>2050</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1989</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1673</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>940</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>712</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>72</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>500</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1428</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1375</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>873</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>481</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1263</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>506</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>939</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>2085</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1356</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>2193</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>2065</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1558</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>2032</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1689</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1114</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>311</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1376</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>405</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1934</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1681</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1357</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1467</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1997</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>309</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>226</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>743</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>806</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>2014</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>990</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1453</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1810</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1094</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1420</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1067</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>148</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>865</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1290</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>2145</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>291</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>692</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>818</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>704</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1086</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>2021</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1100</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>575</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>557</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1304</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>701</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1645</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1362</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1505</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1593</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>2197</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>748</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1368</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1999</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>167</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>730</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1202</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>286</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1210</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1896</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1025</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>628</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>598</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1917</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>377</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1937</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1393</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1877</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1231</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1537</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1779</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>41</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1355</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>2100</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1545</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1298</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1193</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1847</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>886</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>609</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1483</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1882</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1687</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1456</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1691</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>493</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1560</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>277</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>757</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>2118</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>358</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1839</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>236</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>551</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>520</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1261</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>208</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1641</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>881</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>720</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1017</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1849</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1650</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>58</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>631</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1874</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1247</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>592</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1866</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>363</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1800</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>505</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1053</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1609</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1323</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>2112</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>733</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1430</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>2113</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1486</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1563</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1085</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>118</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1468</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>706</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1580</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>745</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>522</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1397</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1089</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1359</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>513</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>81</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1859</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1132</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1208</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>914</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>380</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1220</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>2001</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>84</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1984</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>672</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>774</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>329</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>6</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1216</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1591</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>909</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>468</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>181</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>164</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1532</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>451</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1824</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>490</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1737</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1755</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>287</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1666</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>87</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1617</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>802</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1138</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1064</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1071</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>2017</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1293</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1774</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1569</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1284</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1318</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1954</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>327</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1360</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>442</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>834</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1499</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1055</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>832</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1525</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>348</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1125</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>177</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1619</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1128</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1854</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>86</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1671</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>2148</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1933</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>457</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>777</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1493</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>642</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>2105</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>54</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1435</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1780</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1731</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>643</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1280</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1198</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>677</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>221</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>113</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1185</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>987</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1892</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1196</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>174</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1867</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>589</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1018</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1848</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>18</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>423</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>2154</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>285</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1873</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>428</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1789</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1466</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>669</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>31</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>2126</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>722</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>951</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1578</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1343</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>214</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1364</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1083</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>2158</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>2187</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>326</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>560</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1313</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>700</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1034</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1907</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>341</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>147</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1406</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1649</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>966</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>155</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1414</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1222</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1784</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1410</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1659</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1413</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>2070</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1264</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>2063</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>2083</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>2125</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1910</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>938</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1914</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>346</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1642</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>2178</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>385</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1204</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1242</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>243</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1137</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>936</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1748</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>312</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>2147</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>968</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>660</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1764</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>370</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>566</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1888</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>824</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>982</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1120</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>813</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>778</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1052</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1385</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1013</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1301</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1618</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>126</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>887</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1007</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>355</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1777</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>682</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1818</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1941</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>984</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1709</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>140</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1926</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1581</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1254</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>2117</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>2198</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1389</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>2039</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>711</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1163</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1990</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>10</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1655</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1289</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>754</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>626</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1315</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>129</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>843</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>323</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1287</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>14</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1660</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>215</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1233</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1487</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1550</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>864</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>516</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>597</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>195</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>288</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>950</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1394</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1629</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>549</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>156</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>419</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>922</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>477</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1251</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>553</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>390</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>578</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>2023</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1566</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1945</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>820</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>2107</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1006</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1241</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>664</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1781</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>142</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>2120</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1395</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>421</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>799</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>615</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>295</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>401</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>88</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>2111</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>2165</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>131</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1612</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1424</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1588</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1775</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>724</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1345</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>269</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1608</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>917</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1740</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1557</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>375</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>333</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1366</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>2066</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1118</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>910</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>776</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1970</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>328</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1812</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>12</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>897</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>171</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>260</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1427</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1672</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>901</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>258</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>844</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>138</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>319</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1808</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1452</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1386</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>558</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>139</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>112</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>531</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>224</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>723</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>2035</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1736</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>325</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1488</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1697</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>714</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>846</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>193</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>573</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>946</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>503</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1381</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1378</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>645</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>3</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1465</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>467</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>5</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>2132</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>547</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>228</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1063</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>542</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>242</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>898</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1335</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1160</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>2075</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1727</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>842</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1798</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1361</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>276</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>661</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1422</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>314</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>691</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1782</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>424</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>594</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>2179</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>622</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1379</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1234</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>227</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1319</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1169</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1620</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1607</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>66</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>24</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1235</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>144</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>536</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>811</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1982</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>85</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1572</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1674</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1266</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>484</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1880</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>2102</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1622</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1683</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>362</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1905</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1358</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1026</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1030</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1459</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1601</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1268</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>665</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>364</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1239</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>77</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>27</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1703</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>525</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>725</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>55</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>638</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>302</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>718</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>624</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>7</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>803</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1049</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>336</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>47</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1754</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>106</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>349</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1079</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>238</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>213</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1144</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1476</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1340</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>793</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1096</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>2002</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>2194</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1872</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1977</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>523</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>232</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>644</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1786</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>533</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1979</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>603</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1421</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1074</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1549</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>60</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1489</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>92</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>666</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1310</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1916</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>280</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1314</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>359</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1330</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1803</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>847</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1206</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1628</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>110</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>42</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>125</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>204</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>52</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>545</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>68</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1338</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1831</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>183</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>137</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>899</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>796</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>132</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>80</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>2048</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1823</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>541</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1886</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>983</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>165</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>248</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1331</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>446</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1352</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>858</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1477</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>97</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>2114</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>805</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>737</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1481</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>102</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>434</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>74</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>577</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1412</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1480</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1230</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>918</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1326</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>2029</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1987</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1915</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>762</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>989</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>388</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>235</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1785</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>267</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1329</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1471</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>117</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>2171</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>673</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>249</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1797</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>2196</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>94</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1454</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>33</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>2078</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1973</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>448</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>716</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1490</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1811</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>0</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1644</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1101</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1108</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1441</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>82</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1518</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>676</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1718</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1046</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>770</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1429</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1509</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1870</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1765</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>404</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>2046</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1531</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1582</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>104</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>688</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1543</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>826</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1240</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>62</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1305</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>852</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1599</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1262</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>223</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>145</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1088</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>373</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1684</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1142</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>2108</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1771</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1274</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1265</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1893</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1939</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>9</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>449</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>708</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>255</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>882</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>389</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1551</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>908</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>924</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>2019</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1447</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>460</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>2060</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>2016</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1168</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>958</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>501</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>739</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>40</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>868</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>731</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>539</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1201</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1339</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>697</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1948</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1753</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1371</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1145</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1031</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>372</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>667</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1431</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1807</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>357</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>967</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>783</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>735</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1353</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1035</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>970</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>2174</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1763</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>2071</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1871</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1637</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1805</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1328</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1596</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1767</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1425</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1464</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1942</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1252</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>2008</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>2033</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1236</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>885</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>79</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1172</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>814</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1514</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>671</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1814</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>57</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>133</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1140</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>933</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1995</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>823</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1432</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1613</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1214</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>504</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>2173</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>347</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>386</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1024</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1384</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>894</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>828</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>2143</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>475</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1742</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1714</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1652</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>652</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>172</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1474</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1149</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>38</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>713</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>90</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>166</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1205</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>875</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>2087</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1983</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>2142</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1093</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1155</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1324</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1610</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1350</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>510</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>499</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1924</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1901</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1519</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>338</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1946</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1188</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>28</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1540</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1217</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1565</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>794</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>945</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1745</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>169</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1835</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1197</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1542</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1253</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1654</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>912</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>491</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>953</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1097</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1032</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>587</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>750</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>657</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>234</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>732</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>2192</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1929</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1156</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1741</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1690</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1922</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>934</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1209</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1065</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>108</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1826</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>568</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1167</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1174</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1507</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1492</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>890</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>947</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1048</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1598</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1621</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1713</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>884</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1978</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>2159</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1817</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>850</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1587</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1407</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>734</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>717</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>454</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>264</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>75</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1962</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>444</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>395</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>176</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1042</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>2053</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1658</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1790</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1837</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>595</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>61</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1296</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>872</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1766</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>216</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>278</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1548</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1392</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>36</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1795</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>662</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>2096</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1711</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>977</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1571</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>2026</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>738</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>191</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>919</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>456</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1417</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>675</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>760</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>2097</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1894</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>728</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1947</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1399</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>412</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1098</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1516</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1524</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>825</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1773</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>616</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>114</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>417</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>2153</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1625</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>969</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>604</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>2157</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>89</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>848</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1801</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>2156</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>753</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>498</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1276</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1325</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1630</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>11</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>396</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>284</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>2149</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1066</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1191</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1440</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1600</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>2055</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>2054</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1450</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>690</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1927</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1568</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>2189</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>689</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>851</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1498</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>159</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>895</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1864</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>257</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>335</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>2137</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1039</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>515</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1348</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1015</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>768</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>2164</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>441</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>2094</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>761</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1246</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1203</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1739</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1123</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>521</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>22</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>356</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1277</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1312</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1635</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1992</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>340</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>431</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>473</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>217</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>911</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1227</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1887</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1011</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>957</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>93</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1008</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1070</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1092</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1944</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1308</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>696</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1109</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>996</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1458</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1679</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>153</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1099</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>2036</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>2199</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>789</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>580</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1470</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>703</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1212</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1295</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1971</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1260</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>487</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1624</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>559</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1141</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>2044</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1119</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>801</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>512</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>633</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1752</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1664</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1012</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1829</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1150</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>790</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>116</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1497</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>740</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>2004</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1081</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1627</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>830</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>119</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>656</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1960</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1904</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>2152</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>635</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>369</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>268</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>655</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>935</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>822</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>866</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>46</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1373</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>2025</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>991</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>876</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>773</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1219</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1126</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>4</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>2084</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1003</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1974</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>2042</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>263</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1858</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>612</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>443</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1002</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1077</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>837</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>681</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1715</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>304</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1365</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1844</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>313</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>149</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1148</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1213</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>574</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1721</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1688</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>50</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1838</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>726</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>833</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1377</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1115</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1166</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>470</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>971</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>653</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>399</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>511</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1898</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>320</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>19</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>684</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>35</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>902</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>2079</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>827</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>524</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>407</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>920</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>537</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>758</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1705</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>2151</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1062</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1199</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>245</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1416</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1127</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>784</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1409</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>489</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>154</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1662</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>961</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1686</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>853</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1311</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>625</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1815</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>685</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1850</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>569</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>565</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1758</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1816</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>17</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>127</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1346</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1279</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>2182</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>927</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>980</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>252</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>190</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1139</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>992</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>699</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1961</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>606</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>180</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>301</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>496</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>2011</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>2128</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1966</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>2072</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1938</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>517</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1396</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1069</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>476</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>157</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1243</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1195</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>16</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1535</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1072</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>2184</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>546</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1539</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>658</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1920</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1852</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1019</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1967</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1504</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>959</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>2160</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>283</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1632</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>797</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1921</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>225</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>26</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>2074</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1799</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>437</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>2172</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1388</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>229</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>37</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1693</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>749</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1045</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1398</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>469</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1906</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>2007</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>2181</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>687</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1056</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>639</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>2030</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1218</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1158</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1415</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1527</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1994</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1300</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>2106</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>800</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1603</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>160</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1704</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>956</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1743</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1186</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>821</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1729</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1991</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>877</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1919</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>913</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1884</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>152</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>98</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>2077</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>509</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1135</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1250</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1985</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1875</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>103</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1445</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1443</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1648</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>586</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>627</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1943</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1696</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1143</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>53</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>151</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>403</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1154</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>207</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>2144</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1682</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1122</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1256</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>8</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1014</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>2090</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1060</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>452</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1675</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>253</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1327</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>896</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>2052</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>880</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1595</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>2141</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>623</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>345</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>2018</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1787</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>262</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1634</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1321</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1438</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>150</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1969</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>472</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1976</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1802</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>640</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>871</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>2140</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>550</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>2080</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1959</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>928</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>488</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1843</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1734</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>2099</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1171</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>146</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>2020</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1986</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>1369</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>402</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>2155</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>954</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>2136</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>659</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1794</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1372</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>463</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1349</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>186</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1147</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1224</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>608</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>143</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>751</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1534</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1930</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>981</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>197</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1633</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>883</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1860</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>279</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>293</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>766</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>400</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>122</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1207</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>202</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1462</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>835</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>246</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>1439</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1733</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1695</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>729</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1707</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>2138</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1153</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1661</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1426</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>384</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1248</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1759</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>854</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1589</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>641</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>698</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1636</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1291</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>2098</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1520</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1853</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1136</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>2127</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1631</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1998</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>663</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>683</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1257</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>317</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>648</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1434</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1479</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>709</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1282</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1768</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>972</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1306</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>1400</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1408</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1496</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>2038</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1529</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1663</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1354</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>2146</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>2161</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1643</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1051</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>795</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1597</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1819</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1722</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1183</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1059</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>540</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>1678</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1757</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>1923</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>95</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>1020</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>563</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>863</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1484</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1881</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>1038</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>206</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>392</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>870</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>397</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>2115</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1028</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1485</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>960</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1570</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1895</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>804</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>1751</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>502</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>779</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1863</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>200</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>2088</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1796</th>
       <td>papaya</td>
     </tr>
     <tr>
-      <th>378</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>418</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1698</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>391</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1522</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1162</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1495</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>2027</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1152</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1367</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>64</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>2062</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1180</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>492</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>379</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>763</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>791</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1076</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>878</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>337</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1016</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1275</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>455</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>815</th>
       <td>lentil</td>
     </tr>
     <tr>
-      <th>995</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1981</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>201</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>161</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1579</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>702</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1500</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1129</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1021</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1585</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1955</th>
       <td>cotton</td>
     </tr>
     <tr>
-      <th>34</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>775</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1478</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>1390</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>2139</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1363</th>
       <td>watermelon</td>
     </tr>
     <tr>
-      <th>2041</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>241</th>
       <td>chickpea</td>
     </tr>
     <tr>
-      <th>2061</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>600</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1297</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>2068</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>646</th>
       <td>mungbean</td>
     </tr>
     <tr>
-      <th>1528</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>1267</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1899</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>562</th>
       <td>mothbeans</td>
     </tr>
     <tr>
-      <th>189</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>1806</th>
       <td>coconut</td>
     </tr>
     <tr>
-      <th>975</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>2047</th>
       <td>jute</td>
     </tr>
     <tr>
-      <th>1082</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>474</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>747</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>21</th>
       <td>rice</td>
     </tr>
     <tr>
-      <th>459</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>1184</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>955</th>
       <td>pomegranate</td>
     </tr>
     <tr>
-      <th>1215</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>1515</th>
       <td>apple</td>
     </tr>
     <tr>
-      <th>769</th>
       <td>blackgram</td>
     </tr>
     <tr>
-      <th>1685</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>130</th>
       <td>maize</td>
     </tr>
     <tr>
-      <th>2135</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1482</th>
       <td>muskmelon</td>
     </tr>
     <tr>
-      <th>330</th>
       <td>kidneybeans</td>
     </tr>
     <tr>
-      <th>1238</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>466</th>
       <td>pigeonpeas</td>
     </tr>
     <tr>
-      <th>2169</th>
       <td>coffee</td>
     </tr>
     <tr>
-      <th>1638</th>
       <td>orange</td>
     </tr>
     <tr>
-      <th>1095</th>
       <td>banana</td>
     </tr>
     <tr>
-      <th>1130</th>
       <td>mango</td>
     </tr>
     <tr>
-      <th>1294</th>
       <td>grapes</td>
     </tr>
     <tr>
-      <th>860</th>
       <td>lentil</td>
     </tr>
   </tbody>
