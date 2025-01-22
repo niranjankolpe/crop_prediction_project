@@ -2,7 +2,12 @@
 
 {% block title %}Predictor{% endblock title %}
 
-{% block style %}{% endblock style %}
+{% block style %}
+label{
+    font-weight: bold;
+    color: blue;
+}
+{% endblock style %}
 
 {% block script %}{% endblock script %}
 
@@ -40,7 +45,7 @@
             <label for="rainfall" class="form-label">Rainfall (rainfall in mm)</label>
             <input type="text" class="form-control" name="rainfall" placeholder="Example: 202.9355" required><br>
 
-            <label for="photo" class="form-label">Photo of the environment (optional)</label>
+            <label for="photo" class="form-label">Photo of the environment - Yeah we don't need it. Just showing off we can handle file input :)</label>
             <input type="file" class="form-control" name="photo" placeholder="Choose an Image file" accept="image/*"><br>
         </div>
 

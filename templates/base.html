@@ -12,7 +12,13 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'style.css' %}">
 
-  <style>{% block style %}{% endblock style %}</style>
+  <style>
+    {% block style %}{% endblock style %}
+
+    h1, h2, h3, h4, h5, h6, a, p, big, label {
+      font-family: 'Times New Roman', Times, serif;
+    }
+  </style>
 
   <script>{% block script %} {% endblock script %}</script>
 </head>
@@ -37,10 +43,10 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">{{request.user}}</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/">Home</a>
+              <a class="dropdown-item" href="userDashboard">Profile</a>
+              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="logoutUser">Logout</a>
-              <!-- <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a> -->
             </div>
           </li>
           {% else %}
