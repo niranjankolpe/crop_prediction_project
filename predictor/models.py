@@ -15,7 +15,7 @@ class CropDetails(models.Model):
     rainfall = models.FloatField()
     prediction = models.CharField(max_length=20)
     timestamp = models.DateTimeField(default=datetime.now())
-    photo = models.ImageField(upload_to=f"{MEDIA_ROOT}/images", default="")   
+    photo = models.ImageField(upload_to="images/", default="")   
     
     def __str__(self):
         return str(self.id)

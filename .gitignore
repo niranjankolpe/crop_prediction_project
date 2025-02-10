@@ -1,1 +1,5 @@
 venv/
+my_ssh_key
+my_ssh_key.pub
+db.sqlite3
+
