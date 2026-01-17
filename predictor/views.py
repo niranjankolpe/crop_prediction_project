@@ -1,17 +1,22 @@
 import random
 from django.shortcuts import render, redirect
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+# from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 from .models import *
 from datetime import datetime
 from django.utils import timezone
 from django.conf import settings
 import pandas as pd
-
+from django.core.mail import send_mail
 from sklearn.linear_model import LogisticRegression
 from  sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import joblib
+import os
+from django.core.mail import send_mail
+from django.conf import settings
+from django.core.mail import get_connection
+
 
 from sklearn.metrics import confusion_matrix, classification_report
 
@@ -28,18 +33,21 @@ from .forms import *
 # user.set_password("admin")
 # user.save()
 
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-import io
-import urllib, base64
 
-import plotly.express as px
 
 def index(request):
     return redirect("predictor")
 
 def predictor(request):
+    # print([settings.EMAIL_HOST, settings.EMAIL_PORT, settings.EMAIL_HOST_USER,
+    # settings.EMAIL_HOST_PASSWORD, settings.EMAIL_USE_TLS, settings.EMAIL_USE_SSL])
+
+    # print()
+
+    # print([os.getenv("EMAIL_HOST"),os.getenv("EMAIL_PORT"),
+    #        os.getenv("EMAIL_HOST_USER"),os.getenv("EMAIL_HOST_PASSWORD"),
+    #        settings.EMAIL_USE_TLS, settings.EMAIL_USE_SSL])
+
     return render(request, "predictor/predictor.html")
 
 def predict_refresh(request):
@@ -195,18 +203,36 @@ def signup(request):
 
 def otpValidation(request):
     if request.method == "POST":
-        firstName = request.POST["firstName"]
-        lastName = request.POST["lastName"]
-        username = request.POST["username"]
-        email = request.POST["email"]
-        password = request.POST["password"]
+        # print("Reached inside otpValidation method")
 
-        currentOTP = random.randint(100000, 999999)
-        request.session['currentOTP'] = currentOTP
-        emailService.sendOTPForValidation(email, currentOTP)
-        
-        userData = {'firstName':firstName, 'lastName':lastName, 'username':username, 'email':email, 'password':password}
-        return render(request, "predictor/otpValidation.html", userData)
+        try:
+            conn = get_connection()
+            conn.open()
+
+            firstName = request.POST["firstName"]
+            lastName = request.POST["lastName"]
+            username = request.POST["username"]
+            email = request.POST["email"]
+            password = request.POST["password"]
+            currentOTP = random.randint(100000, 999999)
+            request.session['currentOTP'] = currentOTP
+
+            
+            
+            send_mail(subject="OTP from Crop Prediction Platform",
+              message=f"Dear user,\n\nYour OTP is {currentOTP}.\n\nThanks and Regards\nTeam Crop Prediction Platform",
+              from_email=settings.EMAIL_HOST_USER,
+              recipient_list=[email],
+              fail_silently=False
+            )
+            
+            userData = {'firstName':firstName, 'lastName':lastName, 'username':username, 'email':email, 'password':password}
+            # print("\n\nUserdata: ", userData)
+            return render(request, "predictor/otpValidation.html", userData)
+        except Exception as e:
+            print(e)
+            messages.warning(request, e)
+            return redirect("index")
     else:
         messages.error(request, "Access to this URL allowed from Signup form submission only!")
         return redirect("signup")
@@ -258,13 +284,6 @@ def logoutUser(request):
     messages.success(request, "Logged out successfully!")
     return redirect("predictor")
 
-def analytics(request):
-    if (not request.user.is_authenticated):
-        messages.info(request, "Login to access the Analytics page!")
-        return redirect("loginUser")
-    plots = plot_view()
-    return render(request, "predictor/analytics.html", plots)
-
 # def contactUs(request):
 #     return render(request, "predictor/contactUs.html")
 
@@ -282,75 +301,6 @@ def contactUs(request):
         form = ContactUsTicketForm()
     return render(request, 'predictor/contactUs.html', {'form': form})
 
-def matplotlib_chart(x, y):
-    # Create a line plot
-    plt.figure(figsize=(20,10))
-    plt.plot(x, y)
-    plt.title("Crop Predictions Data")
-    plt.xlabel("Predictions")
-    plt.xticks(rotation=10)
-    plt.ylabel("Count")
-    
-    # Save the plot to a BytesIO object
-    buffer = io.BytesIO()
-    plt.savefig(buffer, format="png")
-    buffer.seek(0)
-
-    # Encode the image to base64 for embedding in HTML
-    image_base64 = base64.b64encode(buffer.getvalue()).decode("utf-8")
-    buffer.close()
-    return image_base64
-
-def plotly_chart(x, y):    
-    fig = px.bar(x=x, y=y, title="Sample Bar Chart")
-
-    # Customize the layout to add some visual appeal
-    fig.update_layout(
-        title="Categorical Value Count in Prediction",
-        title_x=0.5,  # Center title
-        title_font=dict(size=22, color='purple', family="Helvetica"),
-        plot_bgcolor="white",  # Clean white background for the plot
-        paper_bgcolor="lightgray",  # Slightly different background for the paper area
-        xaxis=dict(
-            title="Prediction Type",  # X-axis title
-            title_font=dict(size=18, color='blue'),
-            tickangle=45,  # Angle the x-axis labels for better visibility
-            tickfont=dict(size=14, color='green'),
-            showgrid=True,  # Show grid lines
-            gridcolor="lightgray"  # Light grid color for subtle appearance
-        ),
-        yaxis=dict(
-            title="Count of Predictions",
-            title_font=dict(size=18, color='blue'),
-            tickfont=dict(size=14, color='green'),
-            showgrid=True,  # Show grid lines on the y-axis
-            gridcolor="lightgray"  # Light grid lines for consistency
-        ),
-        bargap=0.15,  # Slightly reduce the gap between bars for a compact view
-        showlegend=False  # Disable the legend since it's not needed here
-    )
-
-    # Apply an alternating color pattern to the bars (different for each prediction)
-    fig.update_traces(marker=dict(color='rgba(255, 99, 132, 0.6)', line=dict(color='rgba(255, 99, 132, 1)', width=1)))
-
-    # Add hover effects: Hover labels show more detailed information
-    fig.update_traces(
-        hoverinfo='x+y',  # Display x and y values on hover
-        hoverlabel=dict(bgcolor='rgba(255, 255, 255, 0.7)', font_size=14, font_family='Arial')
-    )
-    graph_html = fig.to_html(full_html=False)
-    return graph_html
-
-def plot_view():
-    # Example data
-    df = pd.read_csv(os.path.join(settings.MEDIA_ROOT, 'docs/csv/crop_prediction_data.csv'))
-    x = df['prediction'].unique()
-    y = df['prediction'].value_counts()
-    image_base64 = matplotlib_chart(x, y)
-    graph_html = plotly_chart(x, y)
-    #print(y, type(y), list(y))
-    plots = {'x':list(x), 'y':list(y), 'image_base64': image_base64, 'graph_html': graph_html}
-    return plots
 
 def userDashboard(request):
     return render(request, "predictor/userDashboard.html")

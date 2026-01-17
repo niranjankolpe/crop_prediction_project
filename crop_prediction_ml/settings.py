@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-0vow%&6^ee-sjucfw#*86wmb-u7)g&nkqvxmw$s#7+^w+=mgh3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.pythonanywhere.com', '127.0.0.1', 'localhost', '3.110.43.80']
+ALLOWED_HOSTS = ['.pythonanywhere.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -122,8 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'predictor/static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+STATICFILES_DIRS = [BASE_DIR / 'predictor/static']
+# os.path.join(, 'predictor/static'),
+STATIC_ROOT = BASE_DIR / 'static_root'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
@@ -141,11 +142,11 @@ MESSAGE_TAGS = {
 # Email backend settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-EMAIL_HOST    = os.getenv('DJANGO_EMAIL_HOST')
-EMAIL_PORT    = os.getenv('DJANGO_EMAIL_PORT')
+EMAIL_HOST    = os.getenv("EMAIL_HOST")
+EMAIL_PORT    = os.getenv("EMAIL_PORT")
 
-EMAIL_HOST_USER     = os.getenv('DJANGO_EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.getenv('DJANGO_EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER     = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 
 EMAIL_USE_TLS = True  # Use TLS for secure connection
 EMAIL_USE_SSL = False  # Do not use SSL if using TLS
