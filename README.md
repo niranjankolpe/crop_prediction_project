@@ -16,11 +16,11 @@ Requires pre-installed Python 3.14.2
 2) Open a command prompt (cmd) in root folder and make a new python virtual environment using command "python -m venv venv".
 3) Use command "venv\Scripts\activate" to activate the virtual environment. Use the command "venv\Scripts\deactivate" to deactivate the virtual environment.
 4) Run "pip install -r requirements.txt" to install dependencies.
-5) Install nginx zip file from https://nginx.org/en/download.html. Extract the folder, place in root folder and name the nginx folder as "Server". In the Server -> conf -> nginx.conf file, modify the location-static and location-media paths with the absolute folder paths of the "static_root" and "media_root" folders present in project root folder. Ensure the "/" at the end of the paths.
+5) Install nginx zip file from https://nginx.org/en/download.html. Extract the folder, place in root folder and name the nginx folder as "Server". In the Server -> conf -> nginx.conf file, modify the location-static and location-media paths with the absolute folder paths of the "static_root" and "media_root" folders present in project root folder. Ensure that the paths use the "/" and not "\". Also ensure "/" at the end of the paths. Example: "C:/My Files/Crop Prediction/Django App/static_root/"
 
 Project Run:
-1) Open cmd with virtual env, run "python manage.py makemigrations", "python manage.py migrate", "python manage.py collectstatic" and "python manage.py runserver" consecutively. These commands are only required for first time run, or if any new static files are added in the project. From next time onwards just run "python manage.py runserver".
-2) Open a cmd with virtual environment and change path to the nginx folder (named as "Server"). Run "start nginx" to start the server.
+1) In the Django app folder, open cmd with virtual env, run "python manage.py makemigrations", "python manage.py migrate" and "python manage.py collectstatic" consecutively. Create a superuser (administrator) using the commands "python manage.py createsuperuser" and enter the prompted values of your choice. Now run "python manage.py runserver". These commands are only required for first time run. From next time onwards just run "python manage.py runserver". For any change in static files, run "python manage.py collectstatic".
+2) In the Server folder open a cmd with virtual environment and change path to the nginx folder (named as "Server"). Run "start nginx" to start the server.
 3) Visit the url "127.0.0.1" to view the web app.
 
 To close the project, close the Ctrl + C the python cmd and in the nginx cmd run "nginx -s stop". Use "nginx -s reload" if any code changes have been implemented.
