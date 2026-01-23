@@ -9,6 +9,9 @@
 {% block body %}
 <h1 style="text-align: center;">Welcome {{request.user}}</h1>
 <p>Hey buddy, we are still adding features to this page.
-<br>More interesting stuff will be available soon...<br>
-<br><br>Please checkout our <a href="predictor">Prediction</a> or <a href="analytics">Analytics page</a> or <br>See you later :) <br><a href="logoutUser">Logout</a></p>
+<br>More interesting stuff will be available soon...<br><br>
+<a href="resetPassword" class="btn btn-info">Reset Password</a>
+<a href="logoutUser" class="btn btn-warning">Logout</a>
+<br><br>You can checkout our <a href="predictor">Prediction</a> or <a href="analytics">Analytics page</a> till then...
+</p>
 {% endblock body %}

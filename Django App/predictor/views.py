@@ -201,8 +201,95 @@ def donateSubmit(request):
 def signup(request):
     return render(request, "predictor/signup.html")
 
+from django.shortcuts import render
+from django.core.mail import send_mail
+from django.conf import settings
+import random
+
+def resetPassword(request):
+    if request.user.is_authenticated:
+        return redirect("resetPasswordForm")
+    send_otp_readonly = False
+    show_otp = False
+    confirm_new_password = False
+    
+    vars = dict()
+    vars.update({'send_otp_readonly': send_otp_readonly,
+                 'show_otp': show_otp,
+                 'confirm_new_password': confirm_new_password})
+
+    if request.method == "POST" and "send_otp" in request.POST:
+        email = request.POST["email"]
+        exists = User.objects.filter(email=email).exists()
+        if not exists:
+            messages.warning(request, f"No email address as: {email} registered with us!")
+            return redirect("resetPassword")
+        currentOTP = random.randint(100000, 999999)
+        request.session['currentOTP'] = currentOTP
+        
+        send_mail(
+            subject="OTP from Crop Prediction Platform",
+            message=f"Dear user,\n\nYour OTP for password reset is {currentOTP}.\n\nThanks and Regards\nTeam Crop Prediction Platform",
+            from_email=settings.EMAIL_HOST_USER,
+            recipient_list=[email],
+            fail_silently=False
+        )
+        send_otp_readonly = True
+        show_otp = True
+        confirm_new_password = False
+        vars.update({'send_otp_readonly': send_otp_readonly,
+                 'show_otp': show_otp,
+                 'confirm_new_password': confirm_new_password,
+                 'email': email})
+    elif request.method == "POST" and "verify_otp" in request.POST:
+        currentOTP = str(request.session.get('currentOTP'))
+        email = request.POST["email"]
+
+        if request.POST["otp"] == currentOTP:
+            messages.success(request, "Logged in successfully!")
+            messages.info(request, "You may reset your password now!")
+            # Code to actually login pending
+            user = User.objects.get(email=email)
+            login(request, user)
+            return redirect("resetPasswordForm")
+        else:
+            send_otp_readonly = True
+            show_otp = True
+            confirm_new_password = False
+            vars.update({'send_otp_readonly': send_otp_readonly,
+                    'show_otp': show_otp,
+                    'confirm_new_password': confirm_new_password,
+                    'email': email})
+            messages.warning(request, "Invalid OTP! Try again.")
+            return render(request, "predictor/resetPassword.html", vars)
+    return render(request, "predictor/resetPassword.html", vars)
+
+def resetPasswordForm(request):
+    if request.user.is_authenticated:
+        return render(request, "predictor/resetPasswordForm.html", {'email': request.user.email})
+    else:
+        return redirect("loginUser")
+
+def resetPasswordConfirm(request):
+    if request.method == "POST":
+        email = request.POST["email"]
+        user = User.objects.get(email=email)
+
+        newPassword = request.POST["newPassword"]
+        # print(email)
+        # print(f"request.user.email", request.user.email)
+        # print(f"newPassword: {newPassword}")
+        user.set_password(newPassword)
+        user.save()
+        login(request, user)
+        messages.success(request, "Password updated successfully!")
+        return redirect("userDashboard")
+    else:
+        return redirect("loginUser")
+
 def otpValidation(request):
     if request.method == "POST":
+
         # print("Reached inside otpValidation method")
 
         try:
@@ -215,9 +302,7 @@ def otpValidation(request):
             email = request.POST["email"]
             password = request.POST["password"]
             currentOTP = random.randint(100000, 999999)
-            request.session['currentOTP'] = currentOTP
-
-            
+            request.session['currentOTP'] = currentOTP       
             
             send_mail(subject="OTP from Crop Prediction Platform",
               message=f"Dear user,\n\nYour OTP is {currentOTP}.\n\nThanks and Regards\nTeam Crop Prediction Platform",
@@ -232,7 +317,7 @@ def otpValidation(request):
         except Exception as e:
             print(e)
             messages.warning(request, e)
-            return redirect("index")
+            return redirect("predictor")
     else:
         messages.error(request, "Access to this URL allowed from Signup form submission only!")
         return redirect("signup")
@@ -268,15 +353,17 @@ def loginSubmit(request):
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
+        # print(username, password)
         currentUser = authenticate(username=username, password=password)
+        # print(currentUser)
 
         if currentUser is not None:
             login(request, currentUser)
             messages.success(request, "Logged in successfully!")
-            return redirect("predictor")
+            return redirect("userDashboard")
         else:
             messages.error(request, "Invalid Credentials!")
-            return redirect("login")
+            return redirect("loginUser")
     return redirect("predictor")
 
 def logoutUser(request):
