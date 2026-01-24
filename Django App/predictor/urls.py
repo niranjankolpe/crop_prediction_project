@@ -18,6 +18,8 @@ urlpatterns = [
     path('resetPassword', views.resetPassword, name="resetPassword"),
     path('resetPasswordForm', views.resetPasswordForm, name="resetPasswordForm"),
     path('resetPasswordConfirm', views.resetPasswordConfirm, name="resetPasswordConfirm"),
+
+    path('deleteUser', views.deleteUser, name="deleteUser"),
     
     path('otpValidation', views.otpValidation, name="otpValidation"),
     path('contactUs', views.contactUs, name="contactUs"),

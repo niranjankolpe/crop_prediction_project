@@ -12,6 +12,10 @@
 <br>More interesting stuff will be available soon...<br><br>
 <a href="resetPassword" class="btn btn-info">Reset Password</a>
 <a href="logoutUser" class="btn btn-warning">Logout</a>
+<form method="POST" action="deleteUser">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger" onclick="confirm('Confirm to delete your accoount?')">Delete Account</button>
+</form>
 <br><br>You can checkout our <a href="predictor">Prediction</a> or <a href="analytics">Analytics page</a> till then...
 </p>
 {% endblock body %}

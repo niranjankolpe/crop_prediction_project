@@ -391,3 +391,11 @@ def contactUs(request):
 
 def userDashboard(request):
     return render(request, "predictor/userDashboard.html")
+
+def deleteUser(request):
+    if request.user.is_authenticated and request.method=="POST":
+        user = User.objects.get(email=request.user.email)
+        username = user.username
+        user.delete()
+        messages.success(request, f"Account with username: {username} deleted successfully!")
+    return redirect("predictor")
