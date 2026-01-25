@@ -227,13 +227,17 @@ def resetPassword(request):
         currentOTP = random.randint(100000, 999999)
         request.session['currentOTP'] = currentOTP
         
-        send_mail(
+        try:
+            send_mail(
             subject="OTP from Crop Prediction Platform",
             message=f"Dear user,\n\nYour OTP for password reset is {currentOTP}.\n\nThanks and Regards\nTeam Crop Prediction Platform",
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=[email],
             fail_silently=False
-        )
+            )
+        except Exception as e:
+            messages.warning(f"Exception occured: {e}")
+            return redirect("predictor")
         send_otp_readonly = True
         show_otp = True
         confirm_new_password = False
