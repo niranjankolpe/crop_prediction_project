@@ -9,3 +9,7 @@ class SimpleTest(TestCase):
     def test_prediction_home(self):
         response = self.client.get("/predictor")
         self.assertEqual(response.status_code, 200) # Respomse Code 200 == Success
+    
+    def test_contactUs(self):
+        response = self.client.get("/contactUs")
+        self.assertEqual(response.status_code, 200)
