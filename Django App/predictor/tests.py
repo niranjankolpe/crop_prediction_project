@@ -13,3 +13,7 @@ class SimpleTest(TestCase):
     def test_contactUs(self):
         response = self.client.get("/contactUs")
         self.assertEqual(response.status_code, 200)
+
+    def test_donate(self):
+        response = self.client.get("/donate")
+        self.assertEqual(response.status_code, 200)
