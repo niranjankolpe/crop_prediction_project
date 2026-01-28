@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from .models import *
 from datetime import datetime
 from django.utils import timezone
-from django.conf import settings
+
 import pandas as pd
 from django.core.mail import send_mail
 from sklearn.linear_model import LogisticRegression
@@ -28,12 +28,6 @@ from django.contrib.auth import authenticate, login, logout
 
 from predictor import emailService
 from .forms import *
-# from django.contrib.auth.models import User
-# user = User.objects.get(username='admin')
-# user.set_password("admin")
-# user.save()
-
-
 
 def index(request):
     return redirect("predictor")
@@ -200,11 +194,6 @@ def donateSubmit(request):
 
 def signup(request):
     return render(request, "predictor/signup.html")
-
-from django.shortcuts import render
-from django.core.mail import send_mail
-from django.conf import settings
-import random
 
 def resetPassword(request):
     if request.user.is_authenticated:
@@ -375,9 +364,6 @@ def logoutUser(request):
     messages.success(request, "Logged out successfully!")
     return redirect("predictor")
 
-# def contactUs(request):
-#     return render(request, "predictor/contactUs.html")
-
 def aboutUs(request):
     return render(request, "predictor/aboutUs.html")
 
@@ -391,7 +377,6 @@ def contactUs(request):
     else:
         form = ContactUsTicketForm()
     return render(request, 'predictor/contactUs.html', {'form': form})
-
 
 def userDashboard(request):
     return render(request, "predictor/userDashboard.html")
