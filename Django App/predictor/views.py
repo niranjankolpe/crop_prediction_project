@@ -41,6 +41,7 @@ def predictor(request):
     # print([os.getenv("EMAIL_HOST"),os.getenv("EMAIL_PORT"),
     #        os.getenv("EMAIL_HOST_USER"),os.getenv("EMAIL_HOST_PASSWORD"),
     #        settings.EMAIL_USE_TLS, settings.EMAIL_USE_SSL])
+    
 
     return render(request, "predictor/predictor.html")
 

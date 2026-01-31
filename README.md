@@ -2,12 +2,17 @@
 
 Setting the system environment variables:
 1) Using a Google Account create an App Password as: "Manage your Google Account" -> Search "App passwords" in the search bar -> Enter a name for you app and click "Create" and note down the password by removing the in between spaces. This password is confidential and should not be shared with anyone.
-2) On local computer taskbar, search "Edit the system environment variables". Click the "Environment Variables..." button and in he "System variables" section, click "New" and enter the following variable name and their respective values. Click "Ok" after filling a variable name and variable value pair. Similarly add the rest variable names and values.
+2) On local computer taskbar, search "Edit the system environment variables". Click the "Environment Variables..." button and in he "System variables" section, click "New" and enter the following variable name and their respective values. Click "Ok" after filling a variable name and variable value pair. Similarly add the rest variable names and values. Given sample values for Gmail account.
 Variable name: Variable value ->
 [DJANGO_EMAIL_HOST: smtp.gmail.com,
 DJANGO_EMAIL_PORT: 587,
 DJANGO_EMAIL_HOST_USER: <YOUR_EMAIL_ADDRESS>,
-EMAIL_HOST_PASSWORD, <YOUR_PASSWORD_SAVED_EARLIER>].
+EMAIL_HOST_PASSWORD, <YOUR_PASSWORD_SAVED_EARLIER>,
+DB_NAME: <YOUR_DB_NAME>,
+DB_USER: <YOUR_DB_USER>,
+DB_PASSWORD: <YOUR_DB_PASSWORD>,
+DB_HOST: <YOUR_DB_HOST>,
+DB_PORT: <YOUR_DB_PORT>].
 Other operating systems may have a different procedure to store environment variables.
 
 Project Installation:
@@ -17,6 +22,11 @@ Requires pre-installed Python 3.14.2
 3) Use command "venv\Scripts\activate" to activate the virtual environment. Use the command "venv\Scripts\deactivate" to deactivate the virtual environment.
 4) Run "pip install -r requirements.txt" to install dependencies.
 5) Install nginx zip file from https://nginx.org/en/download.html. Extract the folder, place in root folder and name the nginx folder as "Server". In the Server -> conf -> nginx.conf file, modify the location-static and location-media paths with the absolute folder paths of the "static_root" and "media_root" folders present in project root folder. Ensure that the paths use the "/" and not "\". Also ensure "/" at the end of the paths. Example: "C:/My Files/Crop Prediction/Django App/static_root/"
+
+Requires pre-installed PostgreSQL:
+1) Install PostgreSQL from https://www.postgresql.org/download/.
+2) In the init.sql.example file in root folder, replace placeholder values with your values.
+3) Run the sql queries in pgAdmin or alternative approches as available in PostgresSQL to create a user and database. Ensure the environment variables are set accordingly.
 
 Project Run:
 1) In the Django app folder, open cmd with virtual env, run "python manage.py makemigrations", "python manage.py migrate" and "python manage.py collectstatic" consecutively. Create a superuser (administrator) using the commands "python manage.py createsuperuser" and enter the prompted values of your choice. Now run "python manage.py runserver". These commands are only required for first time run. From next time onwards just run "python manage.py runserver". For any change in static files, run "python manage.py collectstatic".
