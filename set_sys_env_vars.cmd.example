@@ -1,0 +1,19 @@
+@echo off
+
+setx DJANGO_SECRET_KEY "your_django_secret_key"
+
+REM Email
+setx EMAIL_HOST "your_email_host" & REM For Google Account default: smtp.gmail.com 
+setx EMAIL_PORT "your_email_port" & REM For Google Account default: 587
+setx EMAIL_HOST_USER "your_email_address"
+setx EMAIL_HOST_PASSWORD "your_email_app_password"
+
+REM Database
+setx DB_NAME "your_db_name"
+setx DB_USER "your_db_user"
+setx DB_PASSWORD "your_db_password"
+setx DB_HOST "your_db_host" & REM default: localhost
+setx DB_PORT "your_db_port" & REM default: 5432
+
+echo System environment variables set.
+echo Restart terminal / IDE for changes to take effect.

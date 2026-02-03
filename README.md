@@ -3,18 +3,8 @@
 ## Project Installation:
 ### Setting the system environment variables:
 1) Using a Google Account create an App Password as: "Manage your Google Account" -> Search "App passwords" in the search bar -> Enter a name for you app and click "Create" and note down the password by removing the in between spaces. This password is confidential and should not be shared with anyone.
-2) On local computer taskbar, search "Edit the system environment variables". Click the "Environment Variables..." button and in he "System variables" section, click "New" and enter the following variable name and their respective values. Click "Ok" after filling a variable name and variable value pair. Similarly add the rest variable names and values. Given sample values for Gmail account.
-Variable name: Variable value ->
-[DJANGO_EMAIL_HOST: smtp.gmail.com,
-DJANGO_EMAIL_PORT: 587,
-DJANGO_EMAIL_HOST_USER: <YOUR_EMAIL_ADDRESS>,
-EMAIL_HOST_PASSWORD, <YOUR_PASSWORD_SAVED_EARLIER>,
-DB_NAME: <YOUR_DB_NAME>,
-DB_USER: <YOUR_DB_USER>,
-DB_PASSWORD: <YOUR_DB_PASSWORD>,
-DB_HOST: <YOUR_DB_HOST>,
-DB_PORT: <YOUR_DB_PORT>].
-Other operating systems may have a different procedure to store environment variables.
+2) Rename the "set_sys_env_vars.cmd.example" file to "set_sys_env_vars.cmd" and fill the values inside. Open Command Prompt (cmd) in root folder where the file is placed and run "set_sys_env_vars.cmd"
+Other operating systems might have a different procedure to store environment variables.
 
 ### Dependencies Configuration
 1) Install Python 3.14.2. Then pull the remote repository to your local machine.
