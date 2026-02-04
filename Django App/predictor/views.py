@@ -9,19 +9,16 @@ from django.utils import timezone
 import pandas as pd
 from django.core.mail import send_mail
 from sklearn.linear_model import LogisticRegression
-from  sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import joblib
 import os
-from django.core.mail import send_mail
 from django.conf import settings
 from django.core.mail import get_connection
 
-
-from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.metrics import classification_report
 
 import csv
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout

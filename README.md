@@ -1,4 +1,4 @@
-# crop_prediction_ml
+# Crop Prediction using Machine Learning
 
 ## Project Installation:
 ### Setting the system environment variables:
