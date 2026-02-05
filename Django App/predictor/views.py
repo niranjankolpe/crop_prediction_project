@@ -358,8 +358,11 @@ def loginSubmit(request):
     return redirect("predictor")
 
 def logoutUser(request):
-    logout(request)
-    messages.success(request, "Logged out successfully!")
+    try:
+        logout(request)
+        messages.success(request, "Logged out successfully!")
+    except Exception as e:
+        messages.error(request, "Failed to logout!")
     return redirect("predictor")
 
 def aboutUs(request):
