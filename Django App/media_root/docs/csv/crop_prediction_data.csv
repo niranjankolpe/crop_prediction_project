@@ -1,3 +1,4 @@
 id,nitrogen,phosphorus,potassium,temperature,humidity,pH,rainfall,prediction,timestamp
 1,56,66,99,96.0,90.0,3.0,88.0,mango,2026-01-31 15:51:47.363327+00:00
 2,77,57,21,48.0,55.0,3.0,552.0,rice,2026-01-31 15:52:19.098321+00:00
+3,66,66,34,73.0,73.0,6.0,252.0,mango,2026-02-06 13:34:54.783308+00:00

@@ -27,6 +27,8 @@ from predictor import emailService
 from .forms import *
 
 def index(request):
+    # errorLog = ErrorLogs(error_type="Test error", error_tech_description="No error. Just testing")
+    # errorLog.save()
     return redirect("predictor")
 
 def predictor(request):
@@ -338,6 +340,10 @@ def signupSubmit(request):
     return redirect("predictor")
 
 def loginUser(request):
+    source_url = request.build_absolute_uri()
+    activity_type = "Initiated view - loginUser"
+    activity = ActivityLogs(source_url=source_url, activity_type=activity_type, timestamp=timezone.now())
+    activity.save()
     return render(request, "predictor/login.html")
 
 def loginSubmit(request):

@@ -46,3 +46,23 @@ class ContactUsTicket(models.Model):
 
     def __str__(self):
         return str(self.TICKET_STATUS[self.ticketStatus][1])
+
+class ActivityLogs(models.Model):
+    id = models.AutoField(primary_key=True)
+    source_url = models.URLField()
+    activity_type = models.CharField(max_length=100)
+    comment = models.CharField(max_length=100, null=True)
+    timestamp = models.DateTimeField(default=datetime.now())
+
+    def __str__(self):
+        return str(self.id)
+
+
+class ErrorLogs(models.Model):
+    id = models.AutoField(primary_key=True)
+    error_type = models.CharField(max_length=100)
+    error_tech_description = models.TextField()
+    timestamp = models.DateTimeField(default=datetime.now())
+
+    def __str__(self):
+        return str(self.id)
