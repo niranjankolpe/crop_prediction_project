@@ -25,3 +25,7 @@ class SimpleTest(TestCase):
     def test_loginUser(self):
         response = self.client.get("/loginUser")
         self.assertEqual(response.status_code, 200)
+    
+    def test_userDashboard(self):
+        response = self.client.get("/userDashboard")
+        self.assertEqual(response.status_code, 200)
