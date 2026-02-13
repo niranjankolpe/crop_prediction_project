@@ -33,3 +33,7 @@ class SimpleTest(TestCase):
     def test_resetPassword(self):
         response = self.client.get("/resetPassword")
         self.assertEqual(response.status_code, 200)
+
+    def test_aboutUs(self):
+        response = self.client.get("/aboutUs")
+        self.assertEqual(response.status_code, 200)
