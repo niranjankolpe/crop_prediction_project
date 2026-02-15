@@ -37,3 +37,7 @@ class SimpleTest(TestCase):
     def test_aboutUs(self):
         response = self.client.get("/aboutUs")
         self.assertEqual(response.status_code, 200)
+    
+    def test_otpValidation(self):
+        response = self.client.get("/otpValidation")
+        self.assertEqual(response.status_code, 200)
