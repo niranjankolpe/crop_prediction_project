@@ -1,6 +1,7 @@
 @echo off
 
 setx DJANGO_SECRET_KEY "your_django_secret_key"
+setx DJANGO_DEBUG "your_django_debug_boolean"
 
 REM Email
 setx EMAIL_HOST "your_email_host" & REM For Google Account default: smtp.gmail.com 
