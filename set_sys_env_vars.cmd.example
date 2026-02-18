@@ -2,6 +2,7 @@
 
 setx DJANGO_SECRET_KEY "your_django_secret_key"
 setx DJANGO_DEBUG "your_django_debug_boolean"
+setx DJANGO_ALLOWED_HOSTS "your_django_allowed_hosts"
 
 REM Email
 setx EMAIL_HOST "your_email_host" & REM For Google Account default: smtp.gmail.com 
