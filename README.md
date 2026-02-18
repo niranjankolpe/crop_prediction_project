@@ -30,3 +30,6 @@ Other operating systems might have a different procedure to store environment va
 3) Visit the url "127.0.0.1" to view the web app.
 
 To close the project, close the Ctrl + C the python cmd and in the nginx cmd run "nginx -s stop". Use "nginx -s reload" if any code changes have been implemented.
+
+
+# Render Deployment Instructions coming soon...
