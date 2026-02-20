@@ -32,4 +32,24 @@ Other operating systems might have a different procedure to store environment va
 To close the project, close the Ctrl + C the python cmd and in the nginx cmd run "nginx -s stop". Use "nginx -s reload" if any code changes have been implemented.
 
 
-# Render Deployment Instructions coming soon...
+# Render Deployment Instructions:
+### Pre-Git commit:
+1) Required libraries: gunicorn, whitenoise. For PostgreSQL Database: psycopg2-binary
+2) Add "whitenoise.middleware.WhiteNoiseMiddleware" to the list of middlewares in settings.py
+3) Add "your-app-name.onrender.com" to the list of allowed hosts only if you know the full domain name. Else add "*" for temporary basis. Then replace with your full render domain name in the next code commit.
+4) Add -> STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' in settings.py
+5) Test your local project using "gunicorn yourprojectname.wsgi:application" (Remember to replace yourprojectname) before commit and deployment. 
+6) If using PostgresSQL, create a PostgresSQL DB instance on Render.
+7) Ensure the project has code set to use environment variables to retrieve sensitive data like Database credentials, etc.
+8) Make a new git commit and push to remote repository.
+
+### Post-Git commit:
+1) Create PostgreSQL DB Instance.
+2) Create New Web Service in the same region as your DB instance. Connect your GitHub repository. Select the branch to deploy (main).
+3) Select Language: Python 3. Set Root Directory appropriately. Root Directory is the folder which contains manage.py file. Enter Build Command as follows:
+pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
+4) Set the Start Command as follows (Remember to replace yourprojectname):
+gunicorn yourprojectname.wsgi:application --bind 0.0.0.0:$PORT --workers 1 --threads 2
+5) Set the required Environment Variables.
+6) Save/Submit and monitor the Logs. Upon successfull deployment, a link will be available for accessing the deployed project.
+Any errors encountered need to be fixed in the code and new commits new to be pushed to remote repo for Render to auto-detect and auto-redeploy the new commits. Also monitor environment varibles or Build/Start commands if relevant to the error encountered (if any).
