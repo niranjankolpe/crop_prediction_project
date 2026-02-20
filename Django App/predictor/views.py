@@ -381,7 +381,8 @@ def contactUs(request):
             return redirect('predictor')
     else:
         form = ContactUsTicketForm()
-    return render(request, 'predictor/contactUs.html', {'form': form})
+        print(settings.EMAIL_HOST_USER)
+    return render(request, 'predictor/contactUs.html', {'form': form, 'admin_email_address':settings.EMAIL_HOST_USER})
 
 def userDashboard(request):
     return render(request, "predictor/userDashboard.html")
