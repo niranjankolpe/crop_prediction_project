@@ -1,6 +1,5 @@
 import random
 from django.shortcuts import render, redirect
-# from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 from .models import *
 from datetime import datetime
@@ -215,13 +214,15 @@ def resetPassword(request):
         request.session['currentOTP'] = currentOTP
         
         try:
-            send_mail(
-            subject="OTP from Crop Prediction Platform",
-            message=f"Dear user,\n\nYour OTP for password reset is {currentOTP}.\n\nThanks and Regards\nTeam Crop Prediction Platform",
-            from_email=settings.EMAIL_HOST_USER,
-            recipient_list=[email],
-            fail_silently=False
-            )
+            email_purpose = "password reset"
+            emailService.sendOTPForValidation(email, email_purpose, currentOTP)
+            # send_mail(
+            # subject="OTP from Crop Prediction Platform",
+            # message=f"Dear user,\n\nYour OTP for password reset is {currentOTP}.\n\nThanks and Regards\nTeam Crop Prediction Platform",
+            # from_email=settings.EMAIL_HOST_USER,
+            # recipient_list=[email],
+            # fail_silently=False
+            # )
         except Exception as e:
             messages.warning(f"Exception occured: {e}")
             return redirect("predictor")
