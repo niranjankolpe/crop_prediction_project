@@ -41,3 +41,7 @@ class SimpleTest(TestCase):
     def test_otpValidation(self):
         response = self.client.get("/otpValidation")
         self.assertEqual(response.status_code, 200)
+    
+    def test_logoutUser(self):
+        response = self.client.get("/logoutUser")
+        self.assertEqual(response.status_code, 200)
