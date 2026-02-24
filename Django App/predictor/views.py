@@ -281,28 +281,19 @@ def resetPasswordConfirm(request):
 
 def otpValidation(request):
     if request.method == "POST":
-
         # print("Reached inside otpValidation method")
-
         try:
-            conn = get_connection()
-            conn.open()
-
             firstName = request.POST["firstName"]
             lastName = request.POST["lastName"]
             username = request.POST["username"]
             email = request.POST["email"]
             password = request.POST["password"]
             currentOTP = random.randint(100000, 999999)
-            request.session['currentOTP'] = currentOTP       
-            
-            send_mail(subject="OTP from Crop Prediction Platform",
-              message=f"Dear user,\n\nYour OTP is {currentOTP}.\n\nThanks and Regards\nTeam Crop Prediction Platform",
-              from_email=settings.EMAIL_HOST_USER,
-              recipient_list=[email],
-              fail_silently=False
-            )
-            
+            request.session['currentOTP'] = currentOTP
+
+            email_purpose = "New Account Creation"
+            emailService.sendOTPForValidation(email, email_purpose, currentOTP)
+                        
             userData = {'firstName':firstName, 'lastName':lastName, 'username':username, 'email':email, 'password':password}
             # print("\n\nUserdata: ", userData)
             return render(request, "predictor/otpValidation.html", userData)
@@ -333,13 +324,16 @@ def signupSubmit(request):
         newUser.first_name = firstName
         newUser.last_name = lastName
         newUser.save()
-        messages.success(request, "Account created successfully!")
+        messages.success(request, "Account created successfully! Please login.")
+        return redirect("loginUser")
     else:
         messages.error(request, "Access to this URL allowed from Signup form submission only!")
     return redirect("predictor")
 
 def loginUser(request):
     source_url = request.build_absolute_uri()
+    if request.user.is_authenticated:
+        return redirect("userDashboard")
     activity_type = "Initiated view - loginUser"
     activity = ActivityLogs(source_url=source_url, activity_type=activity_type, timestamp=timezone.now())
     activity.save()
