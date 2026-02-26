@@ -26,19 +26,9 @@ from predictor import emailService
 from .forms import *
 
 def index(request):
-    # errorLog = ErrorLogs(error_type="Test error", error_tech_description="No error. Just testing")
-    # errorLog.save()
     return redirect("predictor")
 
 def predictor(request):
-    # print([settings.EMAIL_HOST, settings.EMAIL_PORT, settings.EMAIL_HOST_USER,
-    # settings.EMAIL_HOST_PASSWORD, settings.EMAIL_USE_TLS, settings.EMAIL_USE_SSL])
-
-    # print()
-
-    # print([os.getenv("EMAIL_HOST"),os.getenv("EMAIL_PORT"),
-    #        os.getenv("EMAIL_HOST_USER"),os.getenv("EMAIL_HOST_PASSWORD"),
-    #        settings.EMAIL_USE_TLS, settings.EMAIL_USE_SSL])
     return render(request, "predictor/predictor.html")
 
 def predict_refresh(request):
@@ -139,7 +129,6 @@ def predict(request):
         input_df = pd.DataFrame(data=input_values, columns=columns, index=None)
         print(input_df.columns, input_df)
         predict_value = model.predict(input_df)
-        # predict_value = "rice"
         predict_value = str(predict_value[0])
         
         timestamp = datetime.now()
@@ -171,7 +160,6 @@ def updateCropDetailsCSV():
 
 def export_cropdetails_csv(request):
     response = HttpResponse(content_type="text/csv")
-    #response["Content-Disposition"] = "attachment; filename='crop_prediction_data.csv'"
     response["Content-Disposition"] = 'attachment; filename="crop_prediction_data.csv"'
 
     writer = csv.writer(response)
@@ -179,7 +167,6 @@ def export_cropdetails_csv(request):
 
     for crop in CropDetails.objects.all():
         writer.writerow([crop.id, crop.n, crop.p, crop.k, crop.temperature, crop.humidity, crop.pH, crop.rainfall, crop.prediction, crop.timestamp])
-    
     return response
 
 def donate(request):
@@ -216,13 +203,6 @@ def resetPassword(request):
         try:
             email_purpose = "password reset"
             emailService.sendOTPForValidation(email, email_purpose, currentOTP)
-            # send_mail(
-            # subject="OTP from Crop Prediction Platform",
-            # message=f"Dear user,\n\nYour OTP for password reset is {currentOTP}.\n\nThanks and Regards\nTeam Crop Prediction Platform",
-            # from_email=settings.EMAIL_HOST_USER,
-            # recipient_list=[email],
-            # fail_silently=False
-            # )
         except Exception as e:
             messages.warning(f"Exception occured: {e}")
             return redirect("predictor")
@@ -240,7 +220,6 @@ def resetPassword(request):
         if request.POST["otp"] == currentOTP:
             messages.success(request, "Logged in successfully!")
             messages.info(request, "You may reset your password now!")
-            # Code to actually login pending
             user = User.objects.get(email=email)
             login(request, user)
             return redirect("resetPasswordForm")
@@ -268,9 +247,6 @@ def resetPasswordConfirm(request):
         user = User.objects.get(email=email)
 
         newPassword = request.POST["newPassword"]
-        # print(email)
-        # print(f"request.user.email", request.user.email)
-        # print(f"newPassword: {newPassword}")
         user.set_password(newPassword)
         user.save()
         login(request, user)
@@ -281,7 +257,6 @@ def resetPasswordConfirm(request):
 
 def otpValidation(request):
     if request.method == "POST":
-        # print("Reached inside otpValidation method")
         try:
             firstName = request.POST["firstName"]
             lastName = request.POST["lastName"]
@@ -295,7 +270,6 @@ def otpValidation(request):
             emailService.sendOTPForValidation(email, email_purpose, currentOTP)
                         
             userData = {'firstName':firstName, 'lastName':lastName, 'username':username, 'email':email, 'password':password}
-            # print("\n\nUserdata: ", userData)
             return render(request, "predictor/otpValidation.html", userData)
         except Exception as e:
             print(e)
@@ -376,7 +350,6 @@ def contactUs(request):
             return redirect('predictor')
     else:
         form = ContactUsTicketForm()
-        print(settings.EMAIL_HOST_USER)
     return render(request, 'predictor/contactUs.html', {'form': form, 'admin_email_address':settings.EMAIL_HOST_USER})
 
 def userDashboard(request):

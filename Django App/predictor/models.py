@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth import get_user_model
 
 from crop_prediction_ml.settings import *
 
@@ -57,8 +58,8 @@ class ActivityLogs(models.Model):
     def __str__(self):
         return str(self.id)
 
-
 class ErrorLogs(models.Model):
+
     id = models.AutoField(primary_key=True)
     error_type = models.CharField(max_length=100)
     error_tech_description = models.TextField()
@@ -66,3 +67,15 @@ class ErrorLogs(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+User = get_user_model()
+
+class LoginActivity(models.Model):
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    event_type = models.CharField(max_length=20)  # login, logout, failed
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
+    user_agent = models.TextField(blank=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user} - {self.event_type}"
