@@ -49,3 +49,7 @@ class SimpleTest(TestCase):
     def test_deleteUser(self):
         response = self.client.get("/deleteUser")
         self.assertEqual(response.status_code, 302)
+    
+    def test_resetPasswordConfirm(self):
+        response = self.client.get("/resetPasswordConfirm")
+        self.assertEqual(response.status_code, 302)
