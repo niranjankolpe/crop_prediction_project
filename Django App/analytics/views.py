@@ -18,7 +18,7 @@ def index(request):
         messages.info(request, "Login to access the Analytics page!")
         return redirect("loginUser")
     plots = plot_view()
-    return render(request, "predictor/analytics.html", plots)
+    return render(request, "analytics/analytics.html", plots)
 
 def plot_view():
     # Example data

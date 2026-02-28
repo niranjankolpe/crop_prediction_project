@@ -26,16 +26,16 @@
 <body style="background: url({% static 'crop.png' %}); background-size: cover; background-position: center;">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="predictor" style="padding-left: 10px;">Crop Prediction</a>
+      <a class="navbar-brand" href="/predictor" style="padding-left: 10px;">Crop Prediction</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item"><a class="nav-link" href="predictor">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="aboutUs">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="admin">Admin</a></li>
-          <li class="nav-item"><a class="nav-link" href="api/">API</a></li>
-          <li class="nav-item"><a class="nav-link" href="donate">Donation</a></li>
-          <li class="nav-item"><a class="nav-link" href="analytics">Analytics</a></li>
-          <li class="nav-item"><a class="nav-link" href="contactUs">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/predictor">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/aboutUs">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li>
+          <li class="nav-item"><a class="nav-link" href="/api/">API</a></li>
+          <li class="nav-item"><a class="nav-link" href="/donate">Donation</a></li>
+          <li class="nav-item"><a class="nav-link" href="/analytics">Analytics</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contactUs">Contact Us</a></li>
         </ul>
         <ul class="navbar-nav ms-auto">
           {% if user.is_authenticated %}
@@ -44,14 +44,14 @@
               aria-haspopup="true" aria-expanded="false">{{request.user}}</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="/">Home</a>
-              <a class="dropdown-item" href="userDashboard">Profile</a>
+              <a class="dropdown-item" href="/userDashboard">Profile</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="logoutUser">Logout</a>
+              <a class="dropdown-item" href="/logoutUser">Logout</a>
             </div>
           </li>
           {% else %}
-          <li class="nav-item"><a class="nav-link" href="signup">Signup</a></li>
-          <li class="nav-item"><a class="nav-link" href="loginUser">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="/signup">Signup</a></li>
+          <li class="nav-item"><a class="nav-link" href="/loginUser">Login</a></li>
           {% endif %}
         </ul>
       </div>

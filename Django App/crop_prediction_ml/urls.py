@@ -25,9 +25,9 @@ admin.site.index_title = "Welcome to Admin Dashboard"
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    path('',          include('predictor.urls')),
-    path('analytics', include('analytics.urls')),
-    path('api/',      include('api.urls'))
+    path('',           include('predictor.urls')),
+    path('analytics/', include('analytics.urls')),
+    path('api/',       include('api.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL,  document_root=settings.MEDIA_ROOT)
