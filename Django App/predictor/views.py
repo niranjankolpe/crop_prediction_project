@@ -1,29 +1,23 @@
 import random
 from django.shortcuts import render, redirect
-from sklearn.model_selection import train_test_split
-from .models import *
-from datetime import datetime
-from django.utils import timezone
 
 import pandas as pd
-from django.core.mail import send_mail
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
 import joblib
 import os
 from django.conf import settings
-from django.core.mail import get_connection
-
-from sklearn.metrics import classification_report
 
 import csv
-from django.http import HttpResponse
+from datetime import datetime
+from django.utils import timezone
+
+from predictor.models import ActivityLogs, CropDetails
+
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 
 from predictor import emailService
-from .forms import *
+from predictor.forms import ContactUsTicketForm
 
 def index(request):
     return redirect("predictor")
@@ -31,82 +25,6 @@ def index(request):
 def predictor(request):
     return render(request, "predictor/predictor.html")
 
-def predict_refresh(request):
-    df = pd.read_csv(f"{STATIC_ROOT}/cp.csv")
-    x = df.drop(columns=['label'])
-    y = df['label']
-
-    sclr = StandardScaler()
-    columns = x.columns
-    x_scaled = sclr.fit_transform(x)
-
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 42)
-    log_reg = LogisticRegression()
-    x_train = pd.DataFrame(x_train, columns=columns)
-    log_reg.fit(x_train, y_train)
-    with open(f'{STATIC_ROOT}/crop_prediction_model.pkl', 'wb') as f:
-        joblib.dump(log_reg, f)
-
-    css = """<style>
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            table, th, td {
-                border: 1px solid black;
-            }
-            th, td {
-                padding: 8px;
-                text-align: left;
-            }
-            th {
-                background-color: #f2f2f2;
-            }</style>
-        """
-    x_scaled = pd.DataFrame(x_scaled, columns=columns)
-    
-    x_test = pd.DataFrame(x_test, columns=columns)
-    
-    with open(f"predictor/static/training_dataset.html", "w") as file:
-        file.write(css + df.to_html(index=False))
-
-    with open(f"predictor/static/dataset_description.html", "w") as file:
-        file.write(css + df.describe().to_html(index=False))
-
-    with open(f"predictor/static/x.html", "w") as file:
-        file.write(css + x.to_html(index=False))
-
-    with open(f"predictor/static/x_scaled.html", "w") as file:
-        file.write(css + x_scaled.to_html(index=False))
-
-    with open(f"predictor/static/x_train.html", "w") as file:
-        file.write(css + x_train.to_html(index=False))
-
-    with open(f"predictor/static/x_test.html", "w") as file:
-        file.write(css + x_test.to_html(index=False))
-
-    y_train = pd.DataFrame(y_train)
-    with open(f"predictor/static/y_train.html", "w") as file:
-        file.write(css + y_train.to_html(index=False))
-
-    y_test = pd.DataFrame(y_test)
-    with open(f"predictor/static/y_test.html", "w") as file:
-        file.write(css + y_test.to_html(index=False))
-
-    y_pred = log_reg.predict(x_test)
-    y_pred = pd.DataFrame(y_pred, columns=["label"])
-    with open(f"predictor/static/y_pred.html", "w") as file:
-        file.write(css + y_pred.to_html(index=False))
-
-    class_report = classification_report(y_test, y_pred, output_dict=True)
-    class_report_df = pd.DataFrame(class_report).transpose()
-
-    with open(f"predictor/static/classification_report.html", "w") as file:
-        file.write(css + class_report_df.to_html(index=False))
-
-    messages.success(request, "ML model retrained successfully!")
-    return redirect("analytics")
-    
 def predict(request):
     if request.method != 'POST':
         return redirect("predictor")
@@ -122,12 +40,11 @@ def predict(request):
         ph = float(request.POST['ph'])
         rainfall = float(request.POST['rainfall'])
         
-        model = joblib.load(f"{STATIC_ROOT}/crop_prediction_model.pkl")
+        model = joblib.load(f"{settings.STATIC_ROOT}/crop_prediction_model.pkl")
         input_values = [[N, P, K, temperature, humidity, ph, rainfall]]
         columns = ["N","P","K","temperature","humidity","ph","rainfall"]
 
         input_df = pd.DataFrame(data=input_values, columns=columns, index=None)
-        print(input_df.columns, input_df)
         predict_value = model.predict(input_df)
         predict_value = str(predict_value[0])
         
@@ -157,17 +74,6 @@ def updateCropDetailsCSV():
         for crop in records:
             writer.writerow([crop.id, crop.n, crop.p, crop.k, crop.temperature, crop.humidity, crop.pH, crop.rainfall, crop.prediction, crop.timestamp])
     return
-
-def export_cropdetails_csv(request):
-    response = HttpResponse(content_type="text/csv")
-    response["Content-Disposition"] = 'attachment; filename="crop_prediction_data.csv"'
-
-    writer = csv.writer(response)
-    writer.writerow(['id', 'nitrogen', 'phosphorus', 'potassium', 'temperature', 'humidity', 'pH', 'rainfall', 'prediction', 'timestamp'])
-
-    for crop in CropDetails.objects.all():
-        writer.writerow([crop.id, crop.n, crop.p, crop.k, crop.temperature, crop.humidity, crop.pH, crop.rainfall, crop.prediction, crop.timestamp])
-    return response
 
 def donate(request):
     return render(request, "predictor/donate.html")
