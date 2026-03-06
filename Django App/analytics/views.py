@@ -9,6 +9,7 @@ import pandas as pd
 import matplotlib
 from sklearn.discriminant_analysis import StandardScaler
 from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 matplotlib.use('Agg')
@@ -52,7 +53,7 @@ def predict_refresh(request):
     columns = x.columns
     x_scaled = sclr.fit_transform(x)
 
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 42)
+    x_train, x_test, y_train, y_test = train_test_split(x_scaled, y, test_size = 0.2, random_state = 42)
     log_reg = LogisticRegression()
     x_train = pd.DataFrame(x_train, columns=columns)
     log_reg.fit(x_train, y_train)
