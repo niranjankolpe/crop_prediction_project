@@ -120,6 +120,8 @@ def predict_refresh(request):
 
     with open(f"predictor/static/classification_report.html", "w") as file:
         file.write(css + class_report_df.to_html(index=False))
+    
+    print(classification_report(y_test, y_pred))
 
     messages.success(request, "ML model retrained successfully!")
     return redirect("/analytics")
