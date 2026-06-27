@@ -22,12 +22,16 @@ admin.site.site_header = "Admin Dashboard"
 admin.site.site_title  = "Admin Dashboard"
 admin.site.index_title = "Welcome to Admin Dashboard"
 
+from django.views.generic import TemplateView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('',           include('predictor.urls')),
     path('analytics/', include('analytics.urls')),
-    path('api/',       include('api.urls'))
+    path('api/',       include('api.urls')),
+    path('Ads.txt', TemplateView.as_view(template_name="Ads.txt", content_type="text/plain")),
+    
 ]
 
 urlpatterns += static(settings.MEDIA_URL,  document_root=settings.MEDIA_ROOT)

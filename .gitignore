@@ -1,5 +1,6 @@
 venv/
 Server/
+.env
 set_sys_env_vars.cmd
 *.sqlite3
 __pycache__/
