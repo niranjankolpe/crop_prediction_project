@@ -20,7 +20,7 @@ from predictor import emailService
 from predictor.forms import ContactUsTicketForm
 
 def index(request):
-    return redirect("predictor")
+    return render(request, "predictor/index.html")
 
 def predictor(request):
     return render(request, "predictor/predictor.html")

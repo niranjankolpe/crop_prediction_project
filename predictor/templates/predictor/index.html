@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Predictor{% endblock title %}
+
+{% block style %}
+label{
+    font-weight: bold;
+    color: blue;
+}
+{% endblock style %}
+
+{% block script %}{% endblock script %}
+
+{% block body %}
+<h1 style="text-align: center; color: red;">Crop Prediction</h1><br><br>
+
+<h2 style="text-align: center;">Welcome to Crop Prediction!</h2><br><br>
+
+<p style="text-align: center; align-items: center;">We recommend the best suitable crop for farming based on muliple factors as listed below:
+    <ul style="margin-left: 30%;">
+        <li value="N">Nitrogen % in Soil</li>
+        <li value="P">Phosphorous % in Soil</li>
+        <li value="K">Potassium % in Soil</li>
+        <li value="temperature">Temperature (in F) in Atmosphere</li>
+        <li value="humidity">Humidity in Atmosphere</li>
+        <li value="pH">pH of Soil</li>
+        <li value="rainfall">Annual Rainfall in mm</li>
+    </ul>
+    <div style="text-align: center; align-items: center;">
+        <big><a href="predictor" class="btn btn-primary">Try it out</a></big>
+    </div>
+</p>
+<br><br>
+{% endblock body %}
