@@ -13,7 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import os
+
 from django.contrib import admin
+from django.http import HttpResponse
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
@@ -24,14 +27,20 @@ admin.site.index_title = "Welcome to Admin Dashboard"
 
 from django.views.generic import TemplateView
 
+def serve_ads_txt(request):
+    file_path = os.path.join(settings.BASE_DIR, 'ads.txt')
+    with open(file_path, 'r') as f:
+        content = f.read()
+    return HttpResponse(content, content_type='text/plain')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('',           include('predictor.urls')),
     path('analytics/', include('analytics.urls')),
     path('api/',       include('api.urls')),
-    path('ads.txt', TemplateView.as_view(template_name="ads.txt", content_type="text/plain")),
-    
+    # path('ads.txt', TemplateView.as_view(template_name="ads.txt", content_type="text/plain")),
+    path("ads.txt/", serve_ads_txt),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,  document_root=settings.MEDIA_ROOT)
