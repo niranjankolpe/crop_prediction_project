@@ -30,7 +30,7 @@ urlpatterns = [
     path('',           include('predictor.urls')),
     path('analytics/', include('analytics.urls')),
     path('api/',       include('api.urls')),
-    path('ads.txt', TemplateView.as_view(template_name="Ads.txt", content_type="text/plain")),
+    path('ads.txt', TemplateView.as_view(template_name="ads.txt", content_type="text/plain")),
     
 ]
 
